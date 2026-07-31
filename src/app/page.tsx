@@ -16,6 +16,7 @@ import Verticals from "@/components/sections/Verticals";
 import WhyUs from "@/components/sections/WhyUs";
 import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
+import Areas from "@/components/sections/Areas";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,13 +30,12 @@ export default function HomePage() {
         <AccreditationsSection />
         <ServicesGlimpse />
         <AboutPreview />
-        <CorePillars />
         <WhyChooseUs />
         <BrandsSection />
+        <Areas />
         <ProjectsGallerySection />
         <FAQSection />
         <Testimonials />
-        <ContactCTASection />
         <CtaSection />
       </div>
 
