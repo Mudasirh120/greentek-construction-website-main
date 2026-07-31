@@ -1,0 +1,27 @@
+# Private project/client files
+notes/
+private/
+client-docs/
+seo-private/
+
+# Raw or unused design assets
+raw-assets/
+original-images/
+design-files/
+*.psd
+*.ai
+*.fig
+*.sketch
+
+# Backup files
+*.bak
+*.backup
+*.old
+node_modules/
+.next/
+.vercel/
+.turbo/
+next-env.d.ts
+# Unused Vercel/default assets
+public/images/vercel.svg
+src/favicon.ico
