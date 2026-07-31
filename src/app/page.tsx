@@ -17,6 +17,7 @@ import WhyUs from "@/components/sections/WhyUs";
 import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
 import Areas from "@/components/sections/Areas";
+import Process from "@/components/sections/Process";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,14 +30,13 @@ export default function HomePage() {
         <WhyUs />
         <AccreditationsSection />
         <ServicesGlimpse />
-        <AboutPreview />
-        <WhyChooseUs />
         <BrandsSection />
         <Areas />
+        <Process />
         <ProjectsGallerySection />
-        <FAQSection />
-        <Testimonials />
         <CtaSection />
+        <Testimonials />
+        <FAQSection />
       </div>
 
       <Footer />

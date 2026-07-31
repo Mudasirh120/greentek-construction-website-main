@@ -133,20 +133,20 @@ export default function WhyUs() {
         <div className="grid grid-cols-2 gap-3 md:gap-4">
           <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
             <Award className="text-[#C5EB02] w-8 h-8 mb-4" />
-            <h3 className="mb-2 font-semibold text-xl">
-              CERTIFIED & ACCREDITED
-            </h3>
+            <h3 className="mb-2 font-semibold text-xl">BRAND AGNOSTIC</h3>
             <p className="text-white/80 text-md">
-              Gas Safe, TrustMark, HIES, and Quality Mark certified across
-              solar, heating, and construction work.
+              We select the best in class technology or hardware, based on
+              client requirements.
             </p>
           </div>
           <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
             <Users className="text-[#C5EB02] w-8 h-8 mb-4" />
-            <h3 className="mb-2 font-semibold text-xl">FULLY IN-HOUSE</h3>
+            <h3 className="mb-2 font-semibold text-xl">
+              FULL LIFECYCLE SUPPORT
+            </h3>
             <p className="text-white/80 text-md">
-              No subcontractors passing the job around. Our own accredited
-              engineers and tradespeople handle every install and every build.
+              From initial consultancy and design to installation and long-term
+              maintenance, we stay by your side.
             </p>
           </div>
           <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3 col-span-2">

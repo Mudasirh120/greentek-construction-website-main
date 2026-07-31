@@ -246,7 +246,7 @@ export default function CtaSection() {
                   required
                   value={form.full_name}
                   onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-full bg-black/30 backdrop-blur-sm border border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 text-sm"
+                  className="w-full px-5 py-3.5 rounded-full bg-white/20 backdrop-blur-sm border border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
                   placeholder="Jane Smith"
                 />
               </div>
@@ -266,7 +266,7 @@ export default function CtaSection() {
                   required
                   value={form.email}
                   onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-full bg-zinc-100 border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 text-sm"
+                  className="w-full px-5 py-3.5 rounded-full bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
                   placeholder="jane@email.com"
                 />
               </div>
@@ -286,7 +286,7 @@ export default function CtaSection() {
                   required
                   value={form.phone}
                   onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-full bg-zinc-100 border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 text-sm"
+                  className="w-full px-5 py-3.5 rounded-full bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
                   placeholder="07000 000000"
                 />
               </div>
@@ -305,7 +305,7 @@ export default function CtaSection() {
                   required
                   value={form.message}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-3xl bg-zinc-100 border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 resize-none text-sm"
+                  className="w-full px-5 py-4 rounded-3xl bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
                   placeholder="Tell us about your solar, heating, insulation, or renovation project..."
                 />
               </div>
@@ -313,7 +313,7 @@ export default function CtaSection() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full py-4 rounded-full bg-zinc-900 text-white font-black text-xs uppercase tracking-[0.3em] hover:bg-green-600 transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                className="w-full py-4 rounded-full bg-[#c5eb02] text-black font-black text-xs uppercase tracking-[0.3em] hover:bg-green-600 transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
                 {status === "submitting" ? "Sending..." : "Send My Request"}
               </button>
