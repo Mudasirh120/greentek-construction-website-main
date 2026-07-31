@@ -18,6 +18,8 @@ import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
 import Areas from "@/components/sections/Areas";
 import Process from "@/components/sections/Process";
+import Projects from "@/components/sections/Projects";
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -33,7 +35,7 @@ export default function HomePage() {
         <BrandsSection />
         <Areas />
         <Process />
-        <ProjectsGallerySection />
+        <Projects />
         <CtaSection />
         <Testimonials />
         <FAQSection />
