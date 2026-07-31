@@ -224,7 +224,7 @@ export default function CtaSection() {
           {/* Right: form card */}
           <div
             ref={formFade.ref}
-            className={`lg:col-span-6 bg-white/95 backdrop-blur rounded-3xl p-6 sm:p-8 shadow-2xl transition-all duration-1000 ease-out ${
+            className={`lg:col-span-6 bg-black/50 backdrop-blur-sm border border-white/50 rounded-xl p-6 sm:p-8 shadow-2xl transition-all duration-1000 ease-out ${
               formFade.visible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
@@ -234,7 +234,7 @@ export default function CtaSection() {
               <div className="space-y-1.5">
                 <label
                   htmlFor="full_name"
-                  className="text-xs font-bold text-zinc-700 ml-1"
+                  className="text-xs font-bold text-white ml-1"
                 >
                   Full name
                 </label>
@@ -246,7 +246,7 @@ export default function CtaSection() {
                   required
                   value={form.full_name}
                   onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-full bg-zinc-100 border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 text-sm"
+                  className="w-full px-5 py-3.5 rounded-full bg-black/30 backdrop-blur-sm border border border-transparent focus:bg-white focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-zinc-900 placeholder:text-zinc-400 text-sm"
                   placeholder="Jane Smith"
                 />
               </div>
@@ -254,7 +254,7 @@ export default function CtaSection() {
               <div className="space-y-1.5">
                 <label
                   htmlFor="email"
-                  className="text-xs font-bold text-zinc-700 ml-1"
+                  className="text-xs font-bold text-white ml-1"
                 >
                   Email address
                 </label>
@@ -274,7 +274,7 @@ export default function CtaSection() {
               <div className="space-y-1.5">
                 <label
                   htmlFor="phone"
-                  className="text-xs font-bold text-zinc-700 ml-1"
+                  className="text-xs font-bold text-white ml-1"
                 >
                   Phone number
                 </label>
@@ -294,7 +294,7 @@ export default function CtaSection() {
               <div className="space-y-1.5">
                 <label
                   htmlFor="message"
-                  className="text-xs font-bold text-zinc-700 ml-1"
+                  className="text-xs font-bold text-white ml-1"
                 >
                   How can we help?
                 </label>
