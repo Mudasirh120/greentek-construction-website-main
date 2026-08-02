@@ -110,20 +110,20 @@ export default function WhyUs() {
           {/* Centered heading block */}
           <div
             ref={headerFade.ref}
-            className={`max-w-4xl mx-auto mb-10 md:mb-10 transition-all duration-700 ease-out ${
+            className={`mx-auto mb-10 md:mb-10 transition-all duration-700 ease-out ${
               headerFade.visible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-6 opacity-0"
             }`}
           >
-            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit ">
+            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center mx-auto">
               Why Greentek
             </p>
-            <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
+            <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white text-center">
               Three Reasons
               <br /> Home Owners Trust Us.
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal">
+            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center">
               Accreditation, experience, and accountability built into every
               project we take on.
             </p>

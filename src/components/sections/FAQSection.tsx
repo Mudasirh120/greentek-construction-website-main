@@ -73,7 +73,7 @@ export default function FAQSection() {
         >
           {/* Heading Block */}
           <div className="text-center mb-6 md:mb-8">
-            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
+            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
               Common Inquiries
             </p>
             <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
@@ -86,7 +86,7 @@ export default function FAQSection() {
             {faqItems.map((item, index) => (
               <div
                 key={index}
-                className="group border hover:border-[#c5eb02] rounded-3xl overflow-hidden transition-all duration-300"
+                className="group border hover:border-[#c5eb02] rounded-xl overflow-hidden transition-all duration-300"
               >
                 <button
                   onClick={() =>
