@@ -123,7 +123,7 @@ export default function WhyUs() {
               Three Reasons
               <br /> Home Owners Trust Us.
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center">
+            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center mx-auto">
               Accreditation, experience, and accountability built into every
               project we take on.
             </p>

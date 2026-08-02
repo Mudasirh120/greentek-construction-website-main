@@ -95,7 +95,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-[url('/images/home-page/Solar-field-bg.avif')] bg-cover bg-center overflow-hidden">
-      <div className="py-10 lg:py-14 bg-linear-to-b from-black/50 to-transparent">
+      <div className="py-10 lg:py-14 bg-linear-to-b from-white to-transparent">
         <div className="mx-auto max-w-7xl px-6">
           {/* Centered heading block */}
           <div
