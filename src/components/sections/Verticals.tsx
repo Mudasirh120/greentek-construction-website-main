@@ -58,7 +58,7 @@ export default function Verticals() {
         </div>
       </div>
       <div className="w-full flex px-2 gap-4 md:gap-8 justify-center items-center max-w-7xl mx-auto mt-10">
-        <div className="relative bg-[url('/images/verticals/energy.avif')] rounded-2xl bg-center bg-cover border-8 border-white w-1/2 ">
+        <div className="relative bg-[url('/images/verticals/energy.avif')] rounded-xl bg-center bg-cover border-8 border-white w-1/2 overflow-hidden">
           <div className="bg-linear-to-b from-transparent from-45% to-[#111827] to-100% px-4 py-5 h-80 flex flex-col justify-end text-white">
             <h3 className="text-xl font-semibold mb-2">Energy Solutions</h3>
             <p className="text-md font-normal">
@@ -68,7 +68,7 @@ export default function Verticals() {
           </div>
           <ArrowRight className="absolute top-3 right-3 h-10 w-10 inline ml-2 bg-white rounded-full px-1 py-1 text-black" />
         </div>
-        <div className="relative bg-[url('/images/verticals/home.jpeg')] rounded-2xl bg-center bg-cover border-8 border-white w-1/2 ">
+        <div className="relative bg-[url('/images/verticals/home.jpeg')] rounded-xl overflow-hidden bg-center bg-cover border-8 border-white w-1/2 ">
           <div className="bg-linear-to-b from-transparent from-45% to-[#111827] to-100% px-4 py-5 h-80 flex flex-col justify-end text-white">
             <h3 className="text-xl font-semibold mb-2">Home Solutions</h3>
             <p className="text-md font-normal">

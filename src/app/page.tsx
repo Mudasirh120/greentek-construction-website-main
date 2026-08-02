@@ -9,7 +9,6 @@ import BrandsSection from "@/components/sections/BrandsSection";
 import ProjectsGallerySection from "@/components/sections/ProjectsGallerySection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactCTASection from "@/components/sections/ContactCTASection";
-import OurVision from "@/components/sections/OurVision";
 import Testimonials from "@/components/sections/Testimonials";
 import ServicesGlimpse from "@/components/sections/ServicesGlimpse";
 import Verticals from "@/components/sections/Verticals";

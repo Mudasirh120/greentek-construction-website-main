@@ -75,56 +75,21 @@ export default function Areas() {
       <div className="mx-auto max-w-7xl px-4">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
-          <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-black uppercase leading-tight tracking-tight text-white">
+          <div className="w-full mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-black uppercase leading-tight tracking-tight text-white text-center">
               Crews Local to Your Area.
             </h2>
-            <p className="text-white/85 text-sm sm:text-base mt-3">
+            <p className="text-white/85 text-sm sm:text-base mt-3 text-center">
               Greentek is in-house, not a subcontracted franchise. Our team
               lives and works in the towns we serve.
             </p>
-          </div>
-
-          {/* Postcode check — visual only, not wired up */}
-          <div className="flex-shrink-0">
-            <p className="text-[10px] font-black uppercase tracking-[0.25em] text-zinc-500 mb-2">
-              Check Coverage
-            </p>
-            <div className="flex items-center gap-2 bg-white border border-zinc-200 rounded-full p-1.5 shadow-sm w-full sm:w-80">
-              <svg
-                className="w-4 h-4 text-zinc-400 ml-3 flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <input
-                type="text"
-                placeholder="Enter your postcode"
-                disabled
-                className="flex-1 bg-transparent outline-none text-sm text-zinc-500 placeholder:text-zinc-400 cursor-not-allowed"
-              />
-              <button
-                type="button"
-                disabled
-                className="flex-shrink-0 bg-[#C5EB02] text-black text-xs font-bold uppercase tracking-wide px-4 py-2.5 rounded-full opacity-70 cursor-not-allowed"
-              >
-                Check
-              </button>
-            </div>
           </div>
         </div>
 
         {/* Mosaic grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Large tile — home base */}
-          <div className="lg:row-span-2 lg:col-span-2 relative rounded-2xl overflow-hidden min-h-[280px] lg:min-h-0">
+          <div className="lg:row-span-2 lg:col-span-2 relative rounded-xl overflow-hidden min-h-[280px] lg:min-h-0">
             <img
               src={largeArea.image}
               alt={largeArea.name}
@@ -150,7 +115,7 @@ export default function Areas() {
           {smallAreas.map((area) => (
             <div
               key={area.name}
-              className="relative rounded-2xl overflow-hidden min-h-[160px]"
+              className="relative rounded-xl overflow-hidden min-h-[160px]"
             >
               <img
                 src={area.image}
@@ -172,7 +137,7 @@ export default function Areas() {
         </div>
 
         {/* Marquee ticker */}
-        <div className="mt-4 relative flex items-center bg-zinc-900 rounded-2xl overflow-hidden h-16">
+        <div className="mt-4 relative flex items-center bg-zinc-900 rounded-xl overflow-hidden h-16">
           <div className="flex-shrink-0 z-10 h-full flex flex-col justify-center px-6 bg-zinc-900">
             <p className="text-[9px] font-black uppercase tracking-[0.25em] text-zinc-400">
               Plus

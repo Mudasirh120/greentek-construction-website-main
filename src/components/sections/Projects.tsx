@@ -132,7 +132,7 @@ function BeforeAfterCard({
       {/* Before/After slider image */}
       <div
         ref={containerRef}
-        className="relative rounded-2xl overflow-hidden border-8 border-white w-full h-80 select-none touch-none cursor-ew-resize"
+        className="relative rounded-xl overflow-hidden border-8 border-white w-full h-80 select-none touch-none cursor-ew-resize"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -181,7 +181,7 @@ function BeforeAfterCard({
 
       {/* Text below image */}
       <div className="pt-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-3 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
           {project.category}
         </p>
         <h3 className="text-xl font-semibold mb-2 text-white">
@@ -209,7 +209,7 @@ export default function Projects() {
               : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
             Our Work
           </p>
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">

@@ -118,7 +118,7 @@ function ServicesAccordion() {
       </div>
 
       {/* RIGHT: image panel */}
-      <div className="relative min-h-[320px] w-full overflow-hidden rounded-3xl md:min-h-[560px]">
+      <div className="relative min-h-[320px] w-full overflow-hidden rounded-xl md:min-h-[560px]">
         {services.map((s, i) => (
           <Image
             key={s.id}

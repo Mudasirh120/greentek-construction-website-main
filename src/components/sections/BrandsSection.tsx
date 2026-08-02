@@ -81,13 +81,13 @@ export default function BrandsSection() {
         <div
           className="absolute inset-y-0 left-0 w-16 md:w-32 z-10 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, #111827, transparent)",
+            background: "linear-gradient(to right, #000000, transparent)",
           }}
         />
         <div
           className="absolute inset-y-0 right-0 w-16 md:w-32 z-10 pointer-events-none"
           style={{
-            background: "linear-gradient(to left, #111827, transparent)",
+            background: "linear-gradient(to left, #000000, transparent)",
           }}
         />
 
@@ -102,7 +102,7 @@ export default function BrandsSection() {
           {[...brands, ...brands, ...brands].map((logo, idx) => (
             <div
               key={`${logo.name}-${idx}`}
-              className="relative w-28 h-16 md:w-40 md:h-24 shrink-0 bg-white rounded-2xl p-4 md:p-6 flex items-center justify-center"
+              className="relative w-28 h-16 md:w-40 md:h-24 shrink-0 bg-white rounded-xl p-4 md:p-6 flex items-center justify-center"
             >
               <div className="relative w-full h-full">
                 <Image

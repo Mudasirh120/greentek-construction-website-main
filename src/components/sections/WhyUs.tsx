@@ -104,8 +104,7 @@ export default function WhyUs() {
   const journeyFade = useFadeIn(100);
 
   return (
-    <section className="flex gap-4 md:gap-6 py-10 lg:py-14 overflow-hidden mx-auto px-4 md:px-10">
-      <div className="w-1/2">
+    <section className="gap-4 md:gap-6 py-10 lg:py-14 overflow-hidden mx-auto px-4 md:px-10">
         {" "}
         <div>
           {/* Centered heading block */}
@@ -130,7 +129,7 @@ export default function WhyUs() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3 md:gap-4">
+        <div className="grid grid-cols-3 gap-3 md:gap-4">
           <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
             <Award className="text-[#C5EB02] w-8 h-8 mb-4" />
             <h3 className="mb-2 font-semibold text-xl">BRAND AGNOSTIC</h3>
@@ -149,7 +148,7 @@ export default function WhyUs() {
               maintenance, we stay by your side.
             </p>
           </div>
-          <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3 col-span-2">
+          <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
             <Handshake className="text-[#C5EB02] w-8 h-8 mb-4" />
             <h3 className="mb-2 font-semibold text-xl">
               DONE RIGHT OR WE MAKE IT RIGHT
@@ -169,16 +168,6 @@ export default function WhyUs() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-1/2">
-        <Image
-          src="/images/roof.png"
-          alt="Why Us"
-          width={500}
-          height={300}
-          className="object-cover rounded-xl w-full h-full"
-        />
-      </div>
     </section>
   );
 }
