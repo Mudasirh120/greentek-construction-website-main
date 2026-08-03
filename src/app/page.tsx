@@ -32,11 +32,11 @@ export default function HomePage() {
         <AccreditationsSection />
         <ServicesGlimpse />
         <BrandsSection />
-        <Areas />
         <Process />
         <Projects />
         <CtaSection />
         <Testimonials />
+        <Areas />
         <FAQSection />
       </div>
 

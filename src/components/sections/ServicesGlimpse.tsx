@@ -38,34 +38,34 @@ type ServiceItem = {
 
 const services: ServiceItem[] = [
   {
-    id: "residential",
-    title: "Residential Solar Installation",
-    desc: "We design and install high-efficiency solar panel systems tailored for homes, helping homeowners reduce electricity bills and generate clean, renewable energy.",
+    id: "solar",
+    title: "Solar PV & Battery Storage",
+    desc: "We design and install solar and battery systems tailored for homes, helping homeowners generate their own power and cut electricity bills from day one..",
     image: "/images/services-glimpse/house.avif",
   },
   {
-    id: "commercial",
-    title: "Commercial Solar Systems",
-    desc: "Scaled solar installations engineered for businesses, warehouses, and campuses built to cut operating costs and meet sustainability targets.",
+    id: "heating",
+    title: "Heating & Boiler Upgrades",
+    desc: "We install and upgrade heat pumps and boiler systems for homes, helping homeowners move to efficient, low-carbon heating certified by Gas Safe engineers.",
     image: "/images/services-glimpse/supermarket.jpg",
   },
   {
-    id: "storage",
-    title: "Energy Storage Solutions",
-    desc: "Battery systems that bank excess solar power on-site, keeping your home or business running through outages and after dark.",
+    id: "insulation",
+    title: "Insulation",
+    desc: "We install loft and external wall insulation tailored for homes, helping homeowners stop losing heat and cut what they spend keeping the house warm.",
     image: "/images/services-glimpse/ev.jpg",
   },
   {
-    id: "ev",
-    title: "EV Charging Integration",
-    desc: "Home and workplace EV chargers wired directly into your solar system, so you fuel up on power you generate yourself.",
+    id: "property",
+    title: "Property Refurbishment & Extensions",
+    desc: "We deliver refurbishments and extensions tailored for homes, helping homeowners add real space and upgrade their property to a professional standard.",
     image: "/images/services-glimpse/car.png",
   },
   {
-    id: "maintenance",
-    title: "Solar Maintenance & Monitoring",
-    desc: "Ongoing inspections and real-time performance monitoring to keep every panel operating at peak efficiency, year after year.",
-    image: "/images/services-glimpse/roof.jpg",
+    id: "commerical",
+    title: "Commercial Planned Maintenance",
+    desc: "We deliver refits and maintenance contracts tailored for businesses, helping commercial clients upgrade their premises and keep them running without disrepair.",
+    image: "/images/services-glimpse/supermarket.jpg",
   },
 ];
 
@@ -153,28 +153,29 @@ export default function ServicesGlimpse() {
           }`}
         >
           <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
-            Integrated Energy
+            Our Services
           </p>
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
-            One Intelligent Energy Ecosystem
+            Eenergy. Built. Maintained.
           </h2>
           <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center w-0/2 md:w-3/4 mx-auto font-normal">
-            Generate, store, monitor, and manage your energy through a connected
-            system designed to maximize efficiency and long-term savings.
+            From solar and heating to refurbishments and extensions, we design,
+            install and maintain it all. One team, start to finish, instead of a
+            different contractor for every job.
           </p>
-          <div className="my-12">
-            <a
-              href="/contact"
-              className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
-            >
-              Consult an Expert{" "}
-              <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
-            </a>
-          </div>
         </div>
 
         {/* Full-width services accordion, under the button */}
         <ServicesAccordion />
+      </div>
+      <div className="mt-16 flex justify-center items-center">
+        <a
+          href="/services"
+          className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
+        >
+          View All Services{" "}
+          <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
+        </a>
       </div>
     </section>
   );

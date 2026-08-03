@@ -66,11 +66,14 @@ export default function Areas() {
   const tickerItems = [...moreAreas, ...moreAreas];
 
   return (
-    <section className="py-10 lg:py-14">
+    <section className="py-10 lg:py-18">
       <div className="mx-auto max-w-7xl px-4">
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
-          <div className="w-full mb-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+          <div className="w-full mb-4 ">
+            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center mx-auto">
+              Service Areas
+            </p>
             <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-black uppercase leading-tight tracking-tight text-white text-center">
               Crews Local to Your Area.
             </h2>

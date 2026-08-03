@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { hankenGrotesk } from "@/lib/fonts";
 function useFadeIn(delay = 0) {
@@ -58,9 +58,9 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-8 text-base md:text-md leading-relaxed text-white max-w-2xl font-normal">
-            Greentek specializes in solar PV installation, air source heat
-            pumps, boiler upgrades, property refurbishment, and building
-            extensions across West Midlands and Wales.
+            One team for solar, heat pumps, insulation, and full property
+            renovation, residential and commercial, across the West Midlands and
+            Wales.
           </p>
 
           <div className="my-12">
@@ -71,6 +71,20 @@ export default function HeroSection() {
               Consult an Expert{" "}
               <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
             </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="flex items-center gap-2 text-white text-sm md:text-md">
+              <Check className="h-5 w-5 border rounded-full px-0.5 py-0.5" />
+              Fully Accredited
+            </span>
+            <span className="flex items-center gap-2 text-white text-sm md:text-md">
+              <Check className="h-5 w-5 border rounded-full px-0.5 py-0.5" />
+              Written Warranty
+            </span>
+            <span className="flex items-center gap-2 text-white text-sm md:text-md">
+              <Check className="h-5 w-5 border rounded-full px-0.5 py-0.5" />
+              Zero Hidden Fees
+            </span>
           </div>
         </div>
         {/* <div className="w-full grid grid-cols-1 md:grid-cols-3 items-center justify-between gap-4 md:gap-8 mt-10">

@@ -47,13 +47,15 @@ export default function Verticals() {
             About Us
           </p>
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
-            Our Vision
+            A Home That Works Harder, For Less.
           </h2>
           <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed  text-center w-0/2 md:w-[85%] mx-auto font-normal">
-            We combine renewable energy with property renovation and
-            construction, so instead of juggling separate companies for your
-            solar, your heating, and your extension, you get one accredited team
-            handling it all, properly, from day one.
+            We believe you shouldn't need three different companies to power
+            your property, fix your heating, and renovate your space. That's why
+            Greentek brings solar, heat pumps, and energy storage together with
+            expert construction and renovation both residential and commercial,
+            so everything gets handled by one accredited team, properly, from
+            day one.
           </p>
         </div>
       </div>
@@ -73,8 +75,8 @@ export default function Verticals() {
             <h3 className="text-xl font-semibold mb-2">Home Solutions</h3>
             <p className="text-md font-normal">
               {" "}
-              Primary contractor for large-scale renovations, building services,
-              and planned maintenance.
+              Primary contractor for renovations, extentions, and planned
+              maintenance across residential and commercial properties.
             </p>
           </div>
           <ArrowRight className="absolute top-3 right-3 h-10 w-10 inline ml-2 bg-white rounded-full px-1 py-1 text-black" />

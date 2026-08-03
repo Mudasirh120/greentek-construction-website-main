@@ -105,69 +105,67 @@ export default function WhyUs() {
 
   return (
     <section className="gap-4 md:gap-6 py-10 lg:py-14 overflow-hidden mx-auto px-4 md:px-10">
-        {" "}
-        <div>
-          {/* Centered heading block */}
-          <div
-            ref={headerFade.ref}
-            className={`mx-auto mb-10 md:mb-10 transition-all duration-700 ease-out ${
-              headerFade.visible
-                ? "translate-y-0 opacity-100"
-                : "translate-y-6 opacity-0"
-            }`}
-          >
-            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center mx-auto">
-              Why Greentek
-            </p>
-            <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white text-center">
-              Three Reasons
-              <br /> Home Owners Trust Us.
-            </h2>
-            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center mx-auto">
-              Accreditation, experience, and accountability built into every
-              project we take on.
-            </p>
-          </div>
+      {" "}
+      <div>
+        {/* Centered heading block */}
+        <div
+          ref={headerFade.ref}
+          className={`mx-auto mb-10 md:mb-10 transition-all duration-700 ease-out ${
+            headerFade.visible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-6 opacity-0"
+          }`}
+        >
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center mx-auto">
+            Why Greentek
+          </p>
+          <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white text-center">
+            Three Reasons
+            <br /> Home Owners Trust Us.
+          </h2>
+          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center mx-auto">
+            Accreditation, experience, and accountability built into every
+            project we take on.
+          </p>
         </div>
-        <div className="grid grid-cols-3 gap-3 md:gap-4">
-          <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
-            <Award className="text-[#C5EB02] w-8 h-8 mb-4" />
-            <h3 className="mb-2 font-semibold text-xl">BRAND AGNOSTIC</h3>
-            <p className="text-white/80 text-md">
-              We select the best in class technology or hardware, based on
-              client requirements.
-            </p>
-          </div>
-          <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
-            <Users className="text-[#C5EB02] w-8 h-8 mb-4" />
-            <h3 className="mb-2 font-semibold text-xl">
-              FULL LIFECYCLE SUPPORT
-            </h3>
-            <p className="text-white/80 text-md">
-              From initial consultancy and design to installation and long-term
-              maintenance, we stay by your side.
-            </p>
-          </div>
-          <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
-            <Handshake className="text-[#C5EB02] w-8 h-8 mb-4" />
-            <h3 className="mb-2 font-semibold text-xl">
-              DONE RIGHT OR WE MAKE IT RIGHT
-            </h3>
-            <p className="text-white/80 text-md">
-              500+ projects delivered across solar, home improvement, and
-              renovation with a guarantee behind every one.
-            </p>
-            <div className="mt-8 mb-4">
-              <a
-                href="/contact"
-                className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
-              >
-                Consult an Expert{" "}
-                <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
-              </a>
-            </div>
-          </div>
+      </div>
+      <div className="grid grid-cols-3 gap-3 md:gap-4">
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+          <Award className="text-[#C5EB02] w-8 h-8 mb-4" />
+          <h3 className="mb-2 font-semibold text-xl">BRAND AGNOSTIC</h3>
+          <p className="text-white/80 text-md">
+            We select the best in class technology or hardware, based on client
+            requirements.
+          </p>
         </div>
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+          <Users className="text-[#C5EB02] w-8 h-8 mb-4" />
+          <h3 className="mb-2 font-semibold text-xl">FULL LIFECYCLE SUPPORT</h3>
+          <p className="text-white/80 text-md">
+            From initial consultancy and design to installation and long-term
+            maintenance, we stay by your side.
+          </p>
+        </div>
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+          <Handshake className="text-[#C5EB02] w-8 h-8 mb-4" />
+          <h3 className="mb-2 font-semibold text-xl">
+            OUR STANDARD. YOUR GUARANTEE.
+          </h3>
+          <p className="text-white/80 text-md">
+            Something not right? We come back and fix it. Free. No questions
+            asked, that's a guarantee.
+          </p>
+        </div>
+      </div>
+      <div className="mt-8 mb-4 mx-auto w-full flex justify-center items-center">
+        <a
+          href="/contact"
+          className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
+        >
+          Book Your Free Survey{" "}
+          <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
+        </a>
+      </div>
     </section>
   );
 }
