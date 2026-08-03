@@ -14,31 +14,26 @@ const majorAreas = [
   },
   {
     name: "Wolverhampton",
-    stat: "XX projects completed",
     image: "/images/areas/wolverhampton.jpg",
     size: "small" as const,
   },
   {
     name: "Cardiff",
-    stat: "XX projects completed",
     image: "/images/areas/cardiff.jpg",
     size: "small" as const,
   },
   {
     name: "Coventry",
-    stat: "XX projects completed",
     image: "/images/areas/coventry.jpg",
     size: "small" as const,
   },
   {
     name: "Swansea",
-    stat: "XX projects completed",
     image: "/images/areas/swansea.jpg",
     size: "small" as const,
   },
   {
     name: "Dudley",
-    stat: "XX projects completed",
     image: "/images/areas/dudley.jpg",
     size: "small" as const,
   },
@@ -100,9 +95,6 @@ export default function Areas() {
               <h3 className="text-white text-2xl sm:text-3xl font-black uppercase tracking-tight">
                 {largeArea.name}
               </h3>
-              <p className="text-white/90 text-sm font-semibold mt-1">
-                {largeArea.stat}
-              </p>
               {largeArea.note && (
                 <p className="text-white/70 text-xs mt-2 max-w-md">
                   {largeArea.note}
@@ -143,7 +135,7 @@ export default function Areas() {
               Plus
             </p>
             <p className="text-white text-sm font-black uppercase tracking-tight leading-none whitespace-nowrap">
-              XX More Areas
+              More Areas
             </p>
           </div>
 

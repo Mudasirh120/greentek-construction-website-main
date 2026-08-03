@@ -45,32 +45,32 @@ const projects: Project[] = [
     title: "Solar PV Installation",
     description:
       "Rooftop solar system installed for a family home, cutting grid dependence and lowering monthly bills.",
-    before: "/images/projects/1/before.png",
-    after: "/images/projects/1/after.png",
+    before: "/images/projects/Solar/before.png",
+    after: "/images/projects/Solar/after.png",
   },
   {
     category: "Home Improvement",
     title: "Air Source Heat Pump Conversion",
     description:
       "Boiler-to-ASHP conversion delivering efficient, low-carbon heating for a semi-detached property.",
-    before: "/images/projects/1/before.png",
-    after: "/images/projects/1/after.png",
+    before: "/images/projects/Heating/before.png",
+    after: "/images/projects/Heating/after.webp",
   },
   {
     category: "Home Improvement",
     title: "External Wall Insulation",
     description:
       "Full external wall insulation upgrade, reducing heat loss and modernising an older property's exterior.",
-    before: "/images/projects/1/before.png",
-    after: "/images/projects/1/after.png",
+    before: "/images/projects/External Wall Insulation/before.jpeg",
+    after: "/images/projects/External Wall Insulation/after.jpg",
   },
   {
     category: "Renovation",
     title: "Full Property Refurbishment",
     description:
       "Kitchen, bathroom, and extension refurbishment completed alongside an energy efficiency upgrade.",
-    before: "/images/projects/1/before.png",
-    after: "/images/projects/1/after.png",
+    before: "/images/projects/Extension 2/before.jpeg",
+    after: "/images/projects/Extension 2/after.jpeg",
   },
 ];
 
@@ -132,7 +132,7 @@ function BeforeAfterCard({
       {/* Before/After slider image */}
       <div
         ref={containerRef}
-        className="relative rounded-xl overflow-hidden border-8 border-white w-full h-80 select-none touch-none cursor-ew-resize"
+        className="relative rounded-xl overflow-hidden border-8 border-white w-full h-100 select-none touch-none cursor-ew-resize"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -143,7 +143,7 @@ function BeforeAfterCard({
           src={project.after}
           alt={`${project.title} — after`}
           draggable={false}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          className="absolute inset-0 w-full h-full object-cover bg-center pointer-events-none"
         />
 
         {/* Before image (clipped to slider position) */}
