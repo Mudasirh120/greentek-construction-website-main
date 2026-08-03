@@ -157,15 +157,6 @@ export default function WhyUs() {
           </p>
         </div>
       </div>
-      <div className="mt-8 mb-4 mx-auto w-full flex justify-center items-center">
-        <a
-          href="/contact"
-          className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
-        >
-          Book Your Free Survey{" "}
-          <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
-        </a>
-      </div>
     </section>
   );
 }

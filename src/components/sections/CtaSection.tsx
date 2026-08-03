@@ -100,19 +100,53 @@ const contactDetails = [
   },
 ];
 
+const serviceOptions = [
+  { value: "", label: "Select a service" },
+  { value: "solar_storage", label: "Solar PV & Battery Storage" },
+  { value: "heating_boiler", label: "Heating & Boiler Upgrades" },
+  { value: "insulation", label: "Insulation" },
+  { value: "refurb_extension", label: "Property Refurbishment & Extensions" },
+  { value: "commercial", label: "Commercial Refurbishment & Maintenance" },
+  { value: "not_sure", label: "Not Sure — Need Advice" },
+];
+
+const timelineOptions = [
+  { value: "", label: "Select a timeframe" },
+  { value: "asap", label: "As soon as possible" },
+  { value: "3_months", label: "Within 3 months" },
+  { value: "researching", label: "Just researching" },
+];
+
 type FormState = {
   full_name: string;
   email: string;
   phone: string;
+  postcode: string;
+  service: string;
+  property_type: "residential" | "commercial" | "";
+  is_homeowner: "yes" | "no" | "";
+  timeline: string;
   message: string;
+  consent: boolean;
 };
 
 const initialState: FormState = {
   full_name: "",
   email: "",
   phone: "",
+  postcode: "",
+  service: "",
+  property_type: "",
+  is_homeowner: "",
+  timeline: "",
   message: "",
+  consent: false,
 };
+
+const inputClasses =
+  "w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm border border-transparent focus:border-[#c5eb02] focus:ring-4 focus:ring-[#c5eb02]/10 transition-all outline-none font-medium text-white placeholder:text-white/60 text-sm";
+
+const labelClasses = "text-xs font-bold text-white ml-1";
 
 export default function CtaSection() {
   const contentFade = useFadeIn(0);
@@ -124,14 +158,35 @@ export default function CtaSection() {
   >("idle");
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) {
-    const { id, value } = e.target;
-    setForm((prev) => ({ ...prev, [id]: value }));
+    const { id, value, type } = e.target;
+    if (type === "checkbox") {
+      const checked = (e.target as HTMLInputElement).checked;
+      setForm((prev) => ({ ...prev, [id]: checked }));
+    } else {
+      setForm((prev) => ({ ...prev, [id]: value }));
+    }
+  }
+
+  function handlePropertyType(value: FormState["property_type"]) {
+    setForm((prev) => ({ ...prev, property_type: value }));
+  }
+
+  function handleHomeowner(value: FormState["is_homeowner"]) {
+    setForm((prev) => ({ ...prev, is_homeowner: value }));
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!form.consent) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("submitting");
 
     try {
@@ -165,16 +220,16 @@ export default function CtaSection() {
                 : "translate-y-8 opacity-0"
             }`}
           >
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#c5eb02] mb-4">
+            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center">
               Get In Touch
             </p>
             <h2 className="text-[1.75rem] sm:text-4xl md:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-white mb-4">
-              Ready for a free, no-pressure quote?
+              Get a free quote
             </h2>
             <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-              Tell us a little about your home — solar, heating, insulation, or
-              renovation. We&apos;ll get back within one business day with a
-              tailored plan and quote.
+              Solar, heating, insulation, or a full refurb, tell us what you're
+              looking at and we'll come back within one business day with a
+              straight answer, a plan and a real quote.
             </p>
 
             {/* <ul className="space-y-3 mb-8">
@@ -231,99 +286,220 @@ export default function CtaSection() {
             }`}
           >
             <form className="space-y-5" onSubmit={handleSubmit}>
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="full_name"
-                  className="text-xs font-bold text-white ml-1"
-                >
-                  Full name
-                </label>
-                <input
-                  type="text"
-                  id="full_name"
-                  name="full_name"
-                  autoComplete="name"
-                  required
-                  value={form.full_name}
-                  onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm border border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
-                  placeholder="Jane Smith"
-                />
+              {/* Name + Email */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <label htmlFor="full_name" className={labelClasses}>
+                    Full name
+                  </label>
+                  <input
+                    type="text"
+                    id="full_name"
+                    name="full_name"
+                    autoComplete="name"
+                    required
+                    value={form.full_name}
+                    onChange={handleChange}
+                    className={inputClasses}
+                    placeholder="Jane Smith"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className={labelClasses}>
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autoComplete="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                    className={inputClasses}
+                    placeholder="jane@email.com"
+                  />
+                </div>
               </div>
 
-              <div className="space-y-1.5">
-                <label
-                  htmlFor="email"
-                  className="text-xs font-bold text-white ml-1"
-                >
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  autoComplete="email"
-                  required
-                  value={form.email}
-                  onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
-                  placeholder="jane@email.com"
-                />
+              {/* Phone + Postcode */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <label htmlFor="phone" className={labelClasses}>
+                    Phone number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autoComplete="tel"
+                    required
+                    value={form.phone}
+                    onChange={handleChange}
+                    className={inputClasses}
+                    placeholder="07000 000000"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="postcode" className={labelClasses}>
+                    Property postcode
+                  </label>
+                  <input
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    autoComplete="postal-code"
+                    required
+                    value={form.postcode}
+                    onChange={handleChange}
+                    className={inputClasses}
+                    placeholder="B37 7WY"
+                  />
+                </div>
               </div>
 
+              {/* Service interested in */}
               <div className="space-y-1.5">
-                <label
-                  htmlFor="phone"
-                  className="text-xs font-bold text-white ml-1"
-                >
-                  Phone number
+                <label htmlFor="service" className={labelClasses}>
+                  Service interested in
                 </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  autoComplete="tel"
+                <select
+                  id="service"
+                  name="service"
                   required
-                  value={form.phone}
+                  value={form.service}
                   onChange={handleChange}
-                  className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
-                  placeholder="07000 000000"
-                />
+                  className={`${inputClasses} appearance-none cursor-pointer [&>option]:text-black`}
+                >
+                  {serviceOptions.map((opt) => (
+                    <option
+                      key={opt.value}
+                      value={opt.value}
+                      disabled={opt.value === ""}
+                    >
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
+              {/* Property type + Homeowner */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="space-y-1.5">
+                  <span className={labelClasses}>Property type</span>
+                  <div className="flex gap-2">
+                    {(["residential", "commercial"] as const).map((val) => (
+                      <button
+                        type="button"
+                        key={val}
+                        onClick={() => handlePropertyType(val)}
+                        className={`flex-1 py-3 rounded-xl text-xs font-bold uppercase tracking-wide transition-all border ${
+                          form.property_type === val
+                            ? "bg-[#c5eb02] text-black border-[#c5eb02]"
+                            : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+                        }`}
+                      >
+                        {val === "residential" ? "Residential" : "Commercial"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-1.5">
+                  <span className={labelClasses}>Are you the homeowner?</span>
+                  <div className="flex gap-2">
+                    {(["yes", "no"] as const).map((val) => (
+                      <button
+                        type="button"
+                        key={val}
+                        onClick={() => handleHomeowner(val)}
+                        className={`flex-1 py-3 rounded-xl text-xs font-bold uppercase tracking-wide transition-all border ${
+                          form.is_homeowner === val
+                            ? "bg-[#c5eb02] text-black border-[#c5eb02]"
+                            : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+                        }`}
+                      >
+                        {val === "yes" ? "Yes" : "No"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Timeline */}
               <div className="space-y-1.5">
-                <label
-                  htmlFor="message"
-                  className="text-xs font-bold text-white ml-1"
+                <label htmlFor="timeline" className={labelClasses}>
+                  When are you looking to start?
+                </label>
+                <select
+                  id="timeline"
+                  name="timeline"
+                  value={form.timeline}
+                  onChange={handleChange}
+                  className={`${inputClasses} appearance-none cursor-pointer [&>option]:text-black`}
                 >
+                  {timelineOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="space-y-1.5">
+                <label htmlFor="message" className={labelClasses}>
                   How can we help?
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={3}
-                  required
                   value={form.message}
                   onChange={handleChange}
-                  className="w-full px-5 py-4 rounded-xl bg-white/20 backdrop-blur-sm border border-transparent  focus:border-green-600 focus:ring-4 focus:ring-green-600/10 transition-all outline-none font-medium text-white placeholder:text-white text-sm"
-                  placeholder="Tell us about your solar, heating, insulation, or renovation project..."
+                  className={inputClasses.replace("py-3.5", "py-4")}
+                  placeholder="Tell us about your solar, heating, insulation, or renovation project... (optional)"
                 />
               </div>
+
+              {/* Consent */}
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  checked={form.consent}
+                  onChange={handleChange}
+                  className="mt-0.5 w-4 h-4 rounded border-white/30 bg-white/20 accent-[#c5eb02] cursor-pointer flex-shrink-0"
+                />
+                <span className="text-xs text-white/70 leading-relaxed">
+                  I agree to be contacted by Greentek Energy Ltd about my
+                  enquiry by phone, email, or text.
+                </span>
+              </label>
 
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full py-4 rounded-xl bg-[#c5eb02] text-black font-black text-xs uppercase tracking-[0.3em] hover:bg-green-600 transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                className="w-full py-4 rounded-xl bg-[#c5eb02] text-black font-black text-xs uppercase tracking-[0.3em] hover:bg-[#c5eb02] transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
                 {status === "submitting" ? "Sending..." : "Send My Request"}
               </button>
 
               {status === "success" && (
-                <p className="text-xs font-bold text-green-600 text-center">
+                <p className="text-xs font-bold text-[#c5eb02] text-center">
                   Thanks — we&apos;ll be in touch within one business day.
                 </p>
               )}
-              {status === "error" && (
+              {status === "error" && !form.consent && (
+                <p className="text-xs font-bold text-red-600 text-center">
+                  Please confirm consent to be contacted before submitting.
+                </p>
+              )}
+              {status === "error" && form.consent && (
                 <p className="text-xs font-bold text-red-600 text-center">
                   Something went wrong. Please try again or call us directly.
                 </p>

@@ -51,18 +51,18 @@ export default async function BlogDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black">
       <Header />
 
-      <main className="flex-1 bg-white">
+      <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-zinc-50 py-12 md:py-20 border-b border-zinc-100">
+        <section className="py-12 md:py-20 border-b border-[#c5eb02]">
           <div className="mx-auto max-w-4xl px-6">
             <div className="flex items-center gap-3 mb-6">
-              <span className="inline-block bg-green-100 text-green-700 text-xs font-bold px-4 py-2 rounded-full">
+              <span className="inline-block bg-[#c5eb02] text-black text-xs font-bold px-4 py-2 rounded-full">
                 {post.category}
               </span>
-              <time className="text-sm text-zinc-600 font-medium">
+              <time className="text-sm text-white/70 font-medium">
                 {new Date(post.date).toLocaleDateString("en-GB", {
                   year: "numeric",
                   month: "long",
@@ -70,17 +70,17 @@ export default async function BlogDetailPage({ params }: Props) {
                 })}
               </time>
             </div>
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-zinc-900 mb-6">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-6">
               {post.title}
             </h1>
-            <p className="text-lg md:text-xl text-zinc-600 leading-relaxed font-medium max-w-3xl">
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed font-medium max-w-3xl">
               {post.excerpt}
             </p>
           </div>
         </section>
 
         {/* Cover Image */}
-        <div className="relative h-96 md:h-[500px] w-full bg-white overflow-hidden flex items-center justify-center">
+        <div className="relative h-96 md:h-[500px] aspect-[16/9] w-full bg-black overflow-hidden flex items-center justify-center border-b border-[#c5eb02]">
           <Image
             src={post.coverImage}
             alt={post.coverImageAlt}
@@ -93,13 +93,13 @@ export default async function BlogDetailPage({ params }: Props) {
         {/* Content Section */}
         <section className="py-12 lg:py-24">
           <div className="mx-auto max-w-4xl px-6">
-            <article className="prose prose-zinc max-w-none">
+            <article className="prose prose-invert max-w-none">
               {post.content.map((block, idx) => {
                 if (block.type === "heading") {
                   return (
                     <h2
                       key={idx}
-                      className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-zinc-900 mt-12 mb-6"
+                      className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white mt-12 mb-6"
                     >
                       {block.text}
                     </h2>
@@ -110,7 +110,7 @@ export default async function BlogDetailPage({ params }: Props) {
                   return (
                     <p
                       key={idx}
-                      className="text-lg text-zinc-700 leading-relaxed mb-6 font-medium"
+                      className="text-lg text-white/80 leading-relaxed mb-6 font-medium"
                     >
                       {block.text}
                     </p>
@@ -126,7 +126,7 @@ export default async function BlogDetailPage({ params }: Props) {
                       {block.items?.map((item, itemIdx) => (
                         <li
                           key={itemIdx}
-                          className="text-lg text-zinc-700 leading-relaxed font-medium"
+                          className="text-lg text-white/80 leading-relaxed font-medium"
                         >
                           {item}
                         </li>
@@ -139,18 +139,18 @@ export default async function BlogDetailPage({ params }: Props) {
                   return (
                     <div
                       key={idx}
-                      className="my-12 p-8 md:p-12 bg-gradient-to-r from-green-50 to-green-100/50 rounded-3xl border border-green-200"
+                      className="my-12 p-8 md:p-12 bg-white/5 rounded-xl border border-[#c5eb02]"
                     >
-                      <h3 className="text-2xl md:text-3xl font-black text-zinc-900 mb-4">
+                      <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                         Ready to Get Started?
                       </h3>
-                      <p className="text-lg text-zinc-700 mb-8 font-medium">
+                      <p className="text-lg text-white/80 mb-8 font-medium">
                         {block.text ||
                           "Discover how Greentek can help you achieve your energy and construction goals."}
                       </p>
                       <Link
                         href={block.ctaLink || "/contact"}
-                        className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-green-600 text-white text-sm font-bold hover:bg-green-700 transition-all shadow-xl shadow-green-900/20"
+                        className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-[#c5eb02] text-black text-sm font-bold hover:bg-[#c5eb02]/80 transition-all shadow-xl shadow-zinc-900/10"
                       >
                         {block.ctaText || "Get in Touch"}
                       </Link>
@@ -163,38 +163,38 @@ export default async function BlogDetailPage({ params }: Props) {
             </article>
 
             {/* Related Links */}
-            <div className="mt-16 pt-12 border-t border-zinc-200">
-              <h3 className="text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.3] text-zinc-900 mb-8">
+            <div className="mt-16 pt-12 border-t border-[#c5eb02]">
+              <h3 className="text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.3] text-white mb-8">
                 Next Steps
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Link
                   href="/services"
-                  className="p-6 rounded-2xl bg-zinc-50 border border-zinc-200 hover:border-green-300 hover:bg-green-50 transition-all"
+                  className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#c5eb02] hover:bg-white/10 transition-all"
                 >
-                  <h4 className="text-lg font-bold text-zinc-900 mb-2">
+                  <h4 className="text-lg font-bold text-white mb-2">
                     View Our Services
                   </h4>
-                  <p className="text-zinc-600 text-sm mb-4">
+                  <p className="text-white/70 text-sm mb-4">
                     Explore solar PV, heat pumps, insulation, and refurbishment
                     solutions.
                   </p>
-                  <span className="text-green-600 font-bold text-sm">
+                  <span className="text-[#c5eb02] font-bold text-sm">
                     Learn More →
                   </span>
                 </Link>
                 <Link
                   href="/contact"
-                  className="p-6 rounded-2xl bg-green-50 border border-green-200 hover:border-green-400 hover:bg-green-100 transition-all"
+                  className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#c5eb02] hover:bg-white/10 transition-all"
                 >
-                  <h4 className="text-lg font-bold text-zinc-900 mb-2">
+                  <h4 className="text-lg font-bold text-white mb-2">
                     Contact Us
                   </h4>
-                  <p className="text-zinc-600 text-sm mb-4">
+                  <p className="text-white/70 text-sm mb-4">
                     Ready to transform your energy? Get a free consultation
                     today.
                   </p>
-                  <span className="text-green-600 font-bold text-sm">
+                  <span className="text-[#c5eb02] font-bold text-sm">
                     Get in Touch →
                   </span>
                 </Link>
@@ -203,10 +203,10 @@ export default async function BlogDetailPage({ params }: Props) {
 
             {/* Instagram Follow Section */}
             {post.instagramUrl && (
-              <div className="mt-16 pt-12 border-t border-zinc-200">
-                <div className="p-8 md:p-12 bg-gradient-to-r from-pink-50 via-purple-50 to-blue-50 rounded-3xl border border-purple-200">
+              <div className="mt-16 pt-12 border-t border-[#c5eb02]">
+                <div className="p-8 md:p-12 rounded-xl border border-[#c5eb02] bg-white/5">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="currentColor"
@@ -216,16 +216,18 @@ export default async function BlogDetailPage({ params }: Props) {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-black text-zinc-900">
+                      <h3 className="text-2xl font-black text-white">
                         Follow on Instagram
                       </h3>
-                      <p className="text-zinc-600 text-sm font-medium">
+                      <p className="text-white/70 text-sm font-medium">
                         @greentekenergy.uk
                       </p>
                     </div>
                   </div>
-                  <p className="text-lg text-zinc-700 mb-8 font-medium">
-                    Follow Greentek on Instagram for energy-saving tips, project updates, and home improvement ideas. Stay connected with our latest renewable energy solutions and construction projects.
+                  <p className="text-lg text-white/80 mb-8 font-medium">
+                    Follow Greentek on Instagram for energy-saving tips, project
+                    updates, and home improvement ideas. Stay connected with our
+                    latest renewable energy solutions and construction projects.
                   </p>
                   <a
                     href={post.instagramUrl}
@@ -242,11 +244,11 @@ export default async function BlogDetailPage({ params }: Props) {
         </section>
 
         {/* Back to Blog */}
-        <section className="py-12 border-t border-zinc-100">
+        <section className="py-12 border-t border-[#c5eb02]">
           <div className="mx-auto max-w-4xl px-6">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-green-600 font-bold hover:text-green-700"
+              className="inline-flex items-center gap-2 text-[#c5eb02] font-bold hover:text-[#c5eb02]/80"
             >
               ← Back to Blog
             </Link>
