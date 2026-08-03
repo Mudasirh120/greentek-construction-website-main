@@ -80,7 +80,7 @@ export default async function BlogDetailPage({ params }: Props) {
         </section>
 
         {/* Cover Image */}
-        <div className="relative h-96 md:h-[500px] aspect-[16/9] w-full bg-black overflow-hidden flex items-center justify-center border-b border-[#c5eb02]">
+        <div className="relative h-96 md:h-125  w-full bg-black overflow-hidden flex items-center justify-center border-b border-[#c5eb02]">
           <Image
             src={post.coverImage}
             alt={post.coverImageAlt}
