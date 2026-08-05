@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import { withSeoOverride } from "@/lib/seo";
 
 interface Props {
   params: {
@@ -22,15 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  return {
-    title: `${project.title} | Greentek Projects`,
+  return withSeoOverride(`/projects/${project.slug}`, {
+    title: project.title,
     description: project.description,
-    openGraph: {
-      title: `${project.title} | Greentek Projects`,
-      description: project.description,
-      type: "website",
-    },
-  };
+  });
 }
 
 export function generateStaticParams() {
@@ -93,9 +90,96 @@ export default async function ProjectDetailPage({ params }: Props) {
             <p className="text-center text-white/50 text-sm mt-4 font-medium">
               Drag the slider to compare before and after
             </p>
+          </div>
+        </section>
 
-            {/* CTA */}
-            <div className="mt-12 p-8 md:p-12 bg-white/5 rounded-xl border border-[#c5eb02]">
+        {/* About This Project */}
+        {(project.overview?.length || project.gallery?.length || relatedService) && (
+          <section className="pb-12 lg:pb-24">
+            <div className="mx-auto max-w-4xl px-6">
+              {project.overview && project.overview.length > 0 && (
+                <>
+                  <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white mb-6">
+                    About This Project
+                  </h2>
+                  <div className="space-y-4 mb-10">
+                    {project.overview.map((paragraph, idx) => (
+                      <p
+                        key={idx}
+                        className="text-lg text-white/80 leading-relaxed font-medium"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </>
+              )}
+
+              {relatedService && relatedService.highlights.length > 0 && (
+                <div className="mb-10">
+                  <h3 className="text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.3] text-white mb-6">
+                    Scope of Work
+                  </h3>
+                  <ul className="space-y-4">
+                    {relatedService.highlights.map((item, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl px-5 py-4"
+                      >
+                        <span className="flex-shrink-0 w-6 h-6 mt-0.5 rounded-full bg-[#c5eb02] flex items-center justify-center">
+                          <svg
+                            className="w-3.5 h-3.5 text-black"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={3}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </span>
+                        <span className="text-white/80 leading-relaxed font-medium">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {project.gallery && project.gallery.length > 0 && (
+                <div>
+                  <h3 className="text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.3] text-white mb-6">
+                    More Photos
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {project.gallery.map((src, idx) => (
+                      <div
+                        key={idx}
+                        className="relative h-64 rounded-xl overflow-hidden border border-white/10"
+                      >
+                        <Image
+                          src={src}
+                          alt={`${project.title} — additional photo ${idx + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* CTA */}
+        <section className="pb-12 lg:pb-24">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="p-8 md:p-12 bg-white/5 rounded-xl border border-[#c5eb02]">
               {relatedService ? (
                 <>
                   <span className="inline-block bg-[#c5eb02] text-black text-xs font-bold px-4 py-2 rounded-full mb-4">

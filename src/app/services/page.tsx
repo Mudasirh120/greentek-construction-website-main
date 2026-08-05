@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
@@ -5,6 +6,16 @@ import Process from "@/components/sections/Process";
 import Projects from "@/components/sections/Projects";
 import Image from "next/image";
 import Link from "next/link";
+import { withSeoOverride } from "@/lib/seo";
+
+export function generateMetadata(): Metadata {
+  return withSeoOverride("/services", {
+    title: "Our Services",
+    description:
+      "Solar PV, air source heat pumps, insulation, and property renovation services from Greentek across the West Midlands and Wales.",
+  });
+}
+
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -32,9 +43,9 @@ export default function ServicesPage() {
                 <Link
                   href={`/services/${service.slug}`}
                   key={service.slug}
-                  className="group relative rounded-xl bg-[#101314]  hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex gap-6 "
+                  className="group relative rounded-xl bg-[#101314]  hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row gap-0 sm:gap-6"
                 >
-                  <div className="h-full w-[40%]">
+                  <div className="w-full h-48 sm:h-auto sm:w-[40%]">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -43,7 +54,7 @@ export default function ServicesPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="h-full w-[60%] py-4 px-6 flex flex-col justify-center">
+                  <div className="w-full sm:w-[60%] py-4 px-6 flex flex-col justify-center">
                     <h3 className="text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#c5eb02] transition-colors">
                       {service.title}
                     </h3>

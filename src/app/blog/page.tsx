@@ -2,25 +2,30 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { BlogFilterClient } from "./BlogFilter";
+import { withSeoOverride } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Energy Saving & Home Improvement Insights | Greentek Blog",
-  description:
-    "Practical advice from Greentek on solar PV, air source heat pumps, insulation, property refurbishment, and energy-efficient living. Get expert tips to reduce your energy bills.",
-  keywords: [
-    "energy saving tips",
-    "energy efficiency",
-    "solar PV installation",
-    "air source heat pump",
-    "home insulation",
-    "property refurbishment",
-    "reduce energy bills",
-    "energy blog",
-    "renewable energy",
-    "West Midlands",
-    "Wales",
-  ],
-};
+export function generateMetadata(): Metadata {
+  return {
+    ...withSeoOverride("/blog", {
+      title: "Energy Saving & Home Improvement Insights",
+      description:
+        "Practical advice from Greentek on solar PV, air source heat pumps, insulation, property refurbishment, and energy-efficient living. Get expert tips to reduce your energy bills.",
+    }),
+    keywords: [
+      "energy saving tips",
+      "energy efficiency",
+      "solar PV installation",
+      "air source heat pump",
+      "home insulation",
+      "property refurbishment",
+      "reduce energy bills",
+      "energy blog",
+      "renewable energy",
+      "West Midlands",
+      "Wales",
+    ],
+  };
+}
 
 export default function BlogPage() {
   return (

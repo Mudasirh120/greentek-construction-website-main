@@ -10,6 +10,7 @@ import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
 import AccreditationsSection from "@/components/sections/AccreditationsSection";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import { withSeoOverride } from "@/lib/seo";
 
 interface Props {
   params: {
@@ -32,14 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Page Not Found" };
   }
 
-  const title = `${service.shortName} in ${location.name} | Greentek`;
-  const description = `Professional ${service.shortName.toLowerCase()} in ${location.name}, ${location.region}. Free local survey, fixed-price quote and in-house installation team. Also covering ${location.nearbyAreas.join(", ")}.`;
-
-  return {
-    title,
-    description,
-    openGraph: { title, description, type: "website" },
-  };
+  return withSeoOverride(`/locations/${location.slug}/${service.slug}`, {
+    title: `${service.shortName} in ${location.name}`,
+    description: `Professional ${service.shortName.toLowerCase()} in ${location.name}, ${location.region}. Free local survey, fixed-price quote and in-house installation team. Also covering ${location.nearbyAreas.join(", ")}.`,
+  });
 }
 
 export function generateStaticParams() {

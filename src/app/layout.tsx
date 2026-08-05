@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Hanken_Grotesk  } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
@@ -35,8 +35,6 @@ export const metadata: Metadata = {
     "construction contractor",
     "energy solutions",
   ],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#15803d", // green-700
   icons: {
     icon: "/images/magnific_3003063144.png",
     apple: "/images/magnific_3003063144.png",
@@ -47,6 +45,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#15803d", // green-700
 };
 
 export default function RootLayout({

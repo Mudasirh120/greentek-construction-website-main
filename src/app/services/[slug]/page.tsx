@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Phone } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,6 +10,7 @@ import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
 import AccreditationsSection from "@/components/sections/AccreditationsSection";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import { withSeoOverride } from "@/lib/seo";
 
 interface Props {
   params: {
@@ -28,15 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  return {
-    title: `${service.title} | Greentek`,
+  return withSeoOverride(`/services/${service.slug}`, {
+    title: service.title,
     description: service.description,
-    openGraph: {
-      title: `${service.title} | Greentek`,
-      description: service.description,
-      type: "website",
-    },
-  };
+  });
 }
 
 export function generateStaticParams() {
@@ -72,50 +67,44 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-12 md:py-20 border-b border-[#c5eb02]">
-          <div className="mx-auto max-w-4xl px-6">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-[#c5eb02] font-bold text-sm mb-6 hover:text-[#c5eb02]/80"
-            >
-              ← All Services
-            </Link>
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-6">
-              {service.title}
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 leading-relaxed font-medium max-w-3xl mb-8">
-              {service.description}
-            </p>
-
-            {/* Dual CTA */}
-            <div className="flex flex-col sm:flex-row gap-4">
+        <section
+          className="relative bg-cover bg-center overflow-hidden"
+          style={{ backgroundImage: `url(${service.image})` }}
+        >
+          <div className="bg-black/60 pt-30 py-20">
+            <div className="mx-auto max-w-4xl px-6">
               <Link
-                href="#quote"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-[#c5eb02] text-black text-sm font-bold hover:bg-[#c5eb02]/80 transition-all shadow-xl shadow-zinc-900/10"
+                href="/services"
+                className="inline-flex items-center gap-2 text-[#c5eb02] font-bold text-sm mb-6 hover:text-[#c5eb02]/80"
               >
-                Get a Free {service.shortName} Quote
+                ← All Services
               </Link>
-              <a
-                href={phoneHref}
-                className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 rounded-full border border-white/30 text-white text-sm font-bold hover:border-[#c5eb02] hover:text-[#c5eb02] transition-all"
-              >
-                <Phone className="w-4 h-4" />
-                Call {siteConfig.phone}
-              </a>
+              <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-6">
+                {service.title}
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium max-w-3xl mb-8">
+                {service.description}
+              </p>
+
+              {/* Dual CTA */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="#quote"
+                  className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-[#c5eb02] text-black text-sm font-bold hover:bg-[#c5eb02]/80 transition-all shadow-xl shadow-zinc-900/10"
+                >
+                  Get a Free {service.shortName} Quote
+                </Link>
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 rounded-full border border-white/30 text-white text-sm font-bold hover:border-[#c5eb02] hover:text-[#c5eb02] transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call {siteConfig.phone}
+                </a>
+              </div>
             </div>
           </div>
         </section>
-
-        {/* Cover Image */}
-        <div className="relative h-96 md:h-125 w-full bg-black overflow-hidden flex items-center justify-center border-b border-[#c5eb02]">
-          <Image
-            src={service.image}
-            alt={service.title}
-            fill
-            className="object-contain object-center"
-            priority
-          />
-        </div>
 
         {/* Highlights Section */}
         <section className="py-12 lg:py-24">

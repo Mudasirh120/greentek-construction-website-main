@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
+import { withSeoOverride } from "@/lib/seo";
+
+export function generateMetadata(): Metadata {
+  return withSeoOverride("/terms", {
+    title: "Terms of Service",
+    description: "Terms of service for Greentek Construction.",
+  });
+}
 
 export default function TermsPage() {
   return (

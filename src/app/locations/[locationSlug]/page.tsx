@@ -9,6 +9,7 @@ import { siteConfig } from "@/data/site";
 import Stats from "@/components/sections/Stats";
 import CtaSection from "@/components/sections/CtaSection";
 import AccreditationsSection from "@/components/sections/AccreditationsSection";
+import { withSeoOverride } from "@/lib/seo";
 
 interface Props {
   params: {
@@ -24,14 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Location Not Found" };
   }
 
-  const title = `Construction & Renewable Energy Services in ${location.name} | Greentek`;
-  const description = `Greentek installs solar PV, air source heat pumps, insulation and full property renovations in ${location.name}, ${location.region}. Free local survey and fixed-price quote.`;
-
-  return {
-    title,
-    description,
-    openGraph: { title, description, type: "website" },
-  };
+  return withSeoOverride(`/locations/${location.slug}`, {
+    title: `Construction & Renewable Energy Services in ${location.name}`,
+    description: `Greentek installs solar PV, air source heat pumps, insulation and full property renovations in ${location.name}, ${location.region}. Free local survey and fixed-price quote.`,
+  });
 }
 
 export function generateStaticParams() {
@@ -61,7 +58,7 @@ export default async function LocationDetailPage({ params }: Props) {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-[#c5eb02]">
-          <div className="relative h-[420px] md:h-[480px] w-full">
+          <div className="relative min-h-[560px] md:min-h-[620px] w-full">
             <Image
               src={location.image}
               alt={location.name}
@@ -70,7 +67,7 @@ export default async function LocationDetailPage({ params }: Props) {
               priority
             />
             <div className="absolute inset-0 bg-black/65" />
-            <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-12 max-w-4xl mx-auto">
+            <div className="relative z-10 h-full flex flex-col justify-end px-6 py-12 max-w-4xl mx-auto">
               <Link
                 href="/locations"
                 className="inline-flex items-center gap-2 text-[#c5eb02] font-bold text-sm mb-6 hover:text-[#c5eb02]/80 w-fit"
@@ -84,29 +81,27 @@ export default async function LocationDetailPage({ params }: Props) {
                 Renewable Energy & Construction in{" "}
                 <span className="text-[#c5eb02]">{location.name}</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium max-w-2xl">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium max-w-2xl mb-8">
                 {location.blurb}
               </p>
-            </div>
-          </div>
-        </section>
 
-        {/* Dual CTA */}
-        <section className="py-10 border-b border-[#c5eb02]">
-          <div className="mx-auto max-w-4xl px-6 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="#quote"
-              className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-[#c5eb02] text-black text-sm font-bold hover:bg-[#c5eb02]/80 transition-all shadow-xl shadow-zinc-900/10"
-            >
-              Get a Free Quote for {location.name}
-            </Link>
-            <a
-              href={phoneHref}
-              className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 rounded-full border border-white/30 text-white text-sm font-bold hover:border-[#c5eb02] hover:text-[#c5eb02] transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              Call {siteConfig.phone}
-            </a>
+              {/* Dual CTA */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="#quote"
+                  className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-full bg-[#c5eb02] text-black text-sm font-bold hover:bg-[#c5eb02]/80 transition-all shadow-xl shadow-zinc-900/10"
+                >
+                  Get a Free Quote for {location.name}
+                </Link>
+                <a
+                  href={phoneHref}
+                  className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-4 rounded-full border border-white/30 text-white text-sm font-bold hover:border-[#c5eb02] hover:text-[#c5eb02] transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  Call {siteConfig.phone}
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -125,9 +120,9 @@ export default async function LocationDetailPage({ params }: Props) {
                 <Link
                   key={service.slug}
                   href={`/locations/${location.slug}/${service.slug}`}
-                  className="group relative rounded-xl bg-[#101314] hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex gap-6"
+                  className="group relative rounded-xl bg-[#101314] hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col sm:flex-row gap-0 sm:gap-6"
                 >
-                  <div className="h-full w-[40%]">
+                  <div className="w-full h-48 sm:h-auto sm:w-[40%]">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -136,7 +131,7 @@ export default async function LocationDetailPage({ params }: Props) {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="h-full w-[60%] py-4 px-6 flex flex-col justify-center">
+                  <div className="w-full sm:w-[60%] py-4 px-6 flex flex-col justify-center">
                     <h3 className="text-lg font-semibold leading-[1.3] text-white mb-2 group-hover:text-[#c5eb02] transition-colors">
                       {service.shortName} in {location.name}
                     </h3>

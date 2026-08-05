@@ -1,0 +1,424 @@
+{
+  "name": "Greentek Construction",
+  "description": "Greentek - Leading construction and renewable energy solutions across West Midlands, Wolverhampton, and Wales. Solar PV installation, air source heat pumps, boiler upgrades, loft insulation, external wall insulation, property refurbishment, and building extensions.",
+  "phone": "0333 533 4567",
+  "email": "info@greentekenergy.co.uk",
+  "address": {
+    "line1": "6060 Knights Court, Birmingham Business Park, Ground Floor",
+    "city": "Solihull",
+    "region": "West Midlands",
+    "postcode": "B37 7WY"
+  },
+  "companyNo": "13013349",
+  "location": "United Kingdom",
+  "social": {
+    "facebook": "https://facebook.com/greentekenergy",
+    "instagram": "https://www.instagram.com/greentekenergy.uk?igsh=cHk4b3VnaTdtMTRo",
+    "linkedin": "https://linkedin.com/company/greentekenergy"
+  },
+  "navLinks": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects"
+    },
+    {
+      "label": "Locations",
+      "href": "/locations"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Projects Completed"
+    },
+    {
+      "value": "25+",
+      "label": "Years of Experience"
+    },
+    {
+      "value": "98%",
+      "label": "Client Satisfaction"
+    },
+    {
+      "value": "50+",
+      "label": "Team Members"
+    }
+  ],
+  "services": [
+    {
+      "slug": "solar-pv-installations",
+      "title": "Solar PV Installations",
+      "shortName": "Solar PV",
+      "description": "Solar PV systems across the UK to help homeowners reduce energy bills and improve energy efficiency.",
+      "image": "/images/projects/Solar/after.png",
+      "formCategory": "solar_storage",
+      "highlights": [
+        "Free, no-obligation site survey and system design",
+        "High-efficiency panels from trusted brands including AIKO, JinkoSolar and Trinasolar",
+        "Growatt and SolaX inverter and battery storage options",
+        "Reduces reliance on grid electricity and can improve EPC rating"
+      ]
+    },
+    {
+      "slug": "air-source-heat-pump-installations",
+      "title": "Air Source Heat Pump Installations",
+      "shortName": "Air Source Heat Pumps",
+      "description": "Efficient air source heat pumps for residential and commercial properties, providing sustainable heating solutions.",
+      "image": "/images/projects/Heating/after.webp",
+      "formCategory": "heating_boiler",
+      "highlights": [
+        "Low-carbon heating suited to residential and commercial properties",
+        "Installed by our Gas Safe and in-house accredited team",
+        "Vaillant and Ideal Heating equipment options",
+        "Can be paired with insulation upgrades for greater efficiency"
+      ]
+    },
+    {
+      "slug": "heating-system-upgrades",
+      "title": "Complete Heating System Upgrades",
+      "shortName": "Heating Upgrades",
+      "description": "Complete heating system replacements including boiler installations, radiators, pipework and controls.",
+      "image": "/images/projects/heating-system.jpg",
+      "formCategory": "heating_boiler",
+      "highlights": [
+        "Boiler installation and replacement by Gas Safe engineers",
+        "Full radiator, pipework and heating control upgrades",
+        "Worcester Bosch and Ideal Heating equipment options",
+        "Written warranty on every completed installation"
+      ]
+    },
+    {
+      "slug": "loft-insulation",
+      "title": "Loft Insulation",
+      "shortName": "Loft Insulation",
+      "description": "Professional loft insulation to reduce heat loss, lower energy bills and improve year-round comfort in your home.",
+      "image": "/images/projects/loft-insulation.jpg",
+      "formCategory": "insulation",
+      "highlights": [
+        "Reduces heat loss through the roof",
+        "Helps lower energy bills and heating demand",
+        "Improves year-round comfort in the home",
+        "Fitted by our in-house installation team"
+      ]
+    },
+    {
+      "slug": "external-wall-insulation-rendering",
+      "title": "External Wall Insulation & Rendering",
+      "shortName": "External Wall Insulation",
+      "description": "External wall insulation and rendering solutions to improve thermal performance, protect your home and enhance its appearance.",
+      "image": "/images/projects/External Wall Insulation/after.jpg",
+      "formCategory": "insulation",
+      "highlights": [
+        "Improves thermal performance of external walls",
+        "Protects the property from weather and damp",
+        "Refreshes and modernises the exterior appearance",
+        "Suited to older and traditionally-built properties"
+      ]
+    },
+    {
+      "slug": "loft-conversions",
+      "title": "Loft Conversions",
+      "shortName": "Loft Conversions",
+      "description": "Expert loft conversions that maximise your existing space and add value to your property. From concept to completion.",
+      "image": "/images/projects/loft-conversion.jpg",
+      "formCategory": "refurb_extension",
+      "highlights": [
+        "Maximises existing space without extending the footprint",
+        "Managed from design through to final finishing",
+        "Can add valuable living space and property value",
+        "One in-house team from start to finish"
+      ]
+    },
+    {
+      "slug": "kitchen-renovations",
+      "title": "Kitchen Renovations",
+      "shortName": "Kitchen Renovations",
+      "description": "Complete kitchen refurbishment projects delivered from design through to installation and final finishing.",
+      "image": "/images/projects/kitchen-conversion.jpg",
+      "formCategory": "refurb_extension",
+      "highlights": [
+        "Full kitchen refurbishment from design to final finishing",
+        "Layout, cabinetry, worktops and appliance coordination",
+        "Electrical and plumbing work carried out in-house",
+        "Clear, fixed-price quote before work begins"
+      ]
+    },
+    {
+      "slug": "single-storey-extension",
+      "title": "Single Storey Extension",
+      "shortName": "Single Storey Extensions",
+      "description": "Single storey extensions delivered from design through to construction and final finishing, adding space and value to your home.",
+      "image": "/images/projects/single-extension.jpg",
+      "formCategory": "refurb_extension",
+      "highlights": [
+        "Adds valuable living space to your property",
+        "Managed from design and planning through to completion",
+        "One in-house team, no subcontractors passing the job around",
+        "Written warranty on completion"
+      ]
+    },
+    {
+      "slug": "living-room-improvements",
+      "title": "Living Room Improvements",
+      "shortName": "Living Room Improvements",
+      "description": "Contemporary living room design with custom media wall, ambient lighting and high-quality finishes throughout.",
+      "image": "/images/projects/living-room-improvement.jpg",
+      "formCategory": "refurb_extension",
+      "highlights": [
+        "Contemporary design tailored to your living space",
+        "Custom media walls and ambient lighting",
+        "High-quality finishes throughout",
+        "Delivered by our in-house renovation team"
+      ]
+    },
+    {
+      "slug": "full-home-renovation",
+      "title": "Full Home Renovation",
+      "shortName": "Full Home Renovation",
+      "description": "Complete home renovation from start to finish, transforming the property throughout to the highest standard.",
+      "image": "/images/projects/full-home-renovation.jpg",
+      "formCategory": "refurb_extension",
+      "highlights": [
+        "Whole-property renovation from start to finish",
+        "Single point of contact throughout the project",
+        "Combines structural, energy efficiency and finishing work",
+        "Clear, fixed-price quote and honest timeline"
+      ]
+    }
+  ],
+  "whyChooseUs": [
+    {
+      "title": "Quality First",
+      "description": "Premium materials and expert craftsmanship in every project"
+    },
+    {
+      "title": "On-Time Delivery",
+      "description": "Reliable project completion within agreed timelines"
+    },
+    {
+      "title": "Professional Team",
+      "description": "Experienced architects, engineers, and construction experts"
+    },
+    {
+      "title": "Transparent Communication",
+      "description": "Clear updates and honest reporting throughout your project"
+    }
+  ],
+  "brands": [
+    {
+      "name": "AIKO",
+      "src": "/images/brands/aiko.png"
+    },
+    {
+      "name": "Growatt",
+      "src": "/images/brands/growatt.png"
+    },
+    {
+      "name": "Ideal Heating",
+      "src": "/images/brands/ideal-heating.png"
+    },
+    {
+      "name": "InstaGen",
+      "src": "/images/brands/instagen.png"
+    },
+    {
+      "name": "JinkoSolar",
+      "src": "/images/brands/jinko-solar.png"
+    },
+    {
+      "name": "SolaX",
+      "src": "/images/brands/solax.png"
+    },
+    {
+      "name": "Trinasolar",
+      "src": "/images/brands/trina-solar.png"
+    },
+    {
+      "name": "Vaillant",
+      "src": "/images/brands/vaillant.png"
+    },
+    {
+      "name": "Worcester Bosch",
+      "src": "/images/brands/worcester.png"
+    },
+    {
+      "name": "SWIP",
+      "src": "/images/brands/0x0.png"
+    },
+    {
+      "name": "Hive",
+      "src": "/images/brands/31-500x500.png"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "solar-pv-installation",
+      "service": "solar-pv-installations",
+      "category": "Solar & Energy",
+      "title": "Solar PV Installation",
+      "description": "Rooftop solar system installed for a family home, cutting grid dependence and lowering monthly bills.",
+      "before": "/images/projects/Solar/before.png",
+      "after": "/images/projects/Solar/after.png",
+      "gallery": [
+        "/images/projects/Examples/Solar Panel Installation.png"
+      ],
+      "overview": [
+        "This installation involved a full rooftop solar PV system for a family home, including panel positioning, inverter setup and connection into the property's existing electrical supply.",
+        "The completed system reduces the property's reliance on grid electricity, helping to lower monthly energy bills and improve the home's overall energy efficiency."
+      ]
+    },
+    {
+      "slug": "air-source-heat-pump-conversion",
+      "service": "air-source-heat-pump-installations",
+      "category": "Home Improvement",
+      "title": "Air Source Heat Pump Conversion",
+      "description": "Boiler-to-ASHP conversion delivering efficient, low-carbon heating for a semi-detached property.",
+      "before": "/images/projects/Heating/before.png",
+      "after": "/images/projects/Heating/after.webp",
+      "overview": [
+        "This project converted a semi-detached property from a traditional boiler to an air source heat pump, including removal of the old system and installation of the new heat pump, hot water cylinder and supporting pipework.",
+        "The result is a lower-carbon heating system designed to run efficiently throughout the year, in line with the homeowner's move away from fossil fuel heating."
+      ]
+    },
+    {
+      "slug": "external-wall-insulation",
+      "service": "external-wall-insulation-rendering",
+      "category": "Home Improvement",
+      "title": "External Wall Insulation",
+      "description": "Full external wall insulation upgrade, reducing heat loss and modernising an older property's exterior.",
+      "before": "/images/projects/External Wall Insulation/before.jpeg",
+      "after": "/images/projects/External Wall Insulation/after.jpg",
+      "gallery": [
+        "/images/projects/Examples/Wall rendering design and paint.jpeg"
+      ],
+      "overview": [
+        "The external walls of this older property were insulated and rendered to improve thermal performance and reduce heat loss through the building fabric.",
+        "Alongside the efficiency improvement, the new render refreshed and modernised the exterior appearance of the property."
+      ]
+    },
+    {
+      "slug": "full-property-refurbishment",
+      "service": "full-home-renovation",
+      "category": "Renovation",
+      "title": "Full Property Refurbishment",
+      "description": "Kitchen, bathroom, and extension refurbishment completed alongside an energy efficiency upgrade.",
+      "before": "/images/projects/Extension 2/before.jpeg",
+      "after": "/images/projects/Extension 2/after.jpeg",
+      "gallery": [
+        "/images/projects/Examples/Kitchen installation and granite.jpeg",
+        "/images/projects/Examples/Media wall, mouldinh design paint.jpeg"
+      ],
+      "overview": [
+        "This refurbishment covered kitchen, bathroom and extension work for the property, delivered alongside an energy efficiency upgrade as part of the same project.",
+        "Coordinating each area of the property under one team meant the homeowner had a single point of contact from planning through to completion."
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "slug": "solihull-birmingham",
+      "name": "Solihull & Birmingham",
+      "region": "West Midlands",
+      "isHomeBase": true,
+      "image": "/images/areas/solihull.jpg",
+      "tagline": "Our home base since 2020",
+      "blurb": "Solihull and the wider Birmingham metro area is where Greentek is based, so homeowners here get same-week surveys and the fastest turnaround on solar, heating, insulation and renovation work.",
+      "nearbyAreas": [
+        "Sutton Coldfield",
+        "West Bromwich",
+        "Sandwell",
+        "Redditch"
+      ]
+    },
+    {
+      "slug": "wolverhampton",
+      "name": "Wolverhampton",
+      "region": "West Midlands",
+      "image": "/images/areas/wolverhampton.jpg",
+      "tagline": "Local crews, no subcontractors",
+      "blurb": "Our in-house teams cover Wolverhampton and the surrounding Black Country regularly, delivering solar, heating, insulation and renovation projects without passing the job to subcontractors.",
+      "nearbyAreas": [
+        "Dudley",
+        "Telford",
+        "Stourbridge",
+        "Halesowen"
+      ]
+    },
+    {
+      "slug": "coventry",
+      "name": "Coventry",
+      "region": "West Midlands",
+      "image": "/images/areas/coventry.jpg",
+      "tagline": "Trusted local installers",
+      "blurb": "Homeowners across Coventry and Warwickshire work with Greentek for solar PV, air source heat pumps, insulation and full property renovations, backed by a written warranty on every job.",
+      "nearbyAreas": [
+        "Sutton Coldfield",
+        "Redditch",
+        "Bromsgrove",
+        "Kidderminster"
+      ]
+    },
+    {
+      "slug": "dudley",
+      "name": "Dudley",
+      "region": "West Midlands",
+      "image": "/images/areas/dudley.jpg",
+      "tagline": "Serving the Black Country",
+      "blurb": "From Dudley through the wider Black Country, Greentek delivers renewable energy installations and construction projects with a clear, fixed-price quote and one accountable team.",
+      "nearbyAreas": [
+        "Stourbridge",
+        "Halesowen",
+        "Smethwick",
+        "Wolverhampton"
+      ]
+    },
+    {
+      "slug": "cardiff",
+      "name": "Cardiff",
+      "region": "Wales",
+      "image": "/images/areas/cardiff.jpg",
+      "tagline": "Renewable energy & renovation in Wales",
+      "blurb": "Greentek brings the same in-house solar, heating, insulation and renovation service to Cardiff and the surrounding South Wales area, with local surveys and honest, fixed-price quotes.",
+      "nearbyAreas": [
+        "Newport",
+        "Bridgend",
+        "Neath",
+        "Merthyr Tydfil"
+      ]
+    },
+    {
+      "slug": "swansea",
+      "name": "Swansea",
+      "region": "Wales",
+      "image": "/images/areas/swansea.jpg",
+      "tagline": "Renewable energy & renovation in Wales",
+      "blurb": "In Swansea and the surrounding coastline, Greentek installs solar PV and heat pump systems and delivers insulation and renovation projects for homeowners looking to cut energy costs.",
+      "nearbyAreas": [
+        "Neath",
+        "Port Talbot",
+        "Bridgend",
+        "Wrexham"
+      ]
+    }
+  ]
+}

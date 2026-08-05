@@ -72,7 +72,7 @@ export default function HeroSection() {
               <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
             </a>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
             <span className="flex items-center gap-2 text-white text-sm md:text-md">
               <Check className="h-5 w-5 border rounded-full px-0.5 py-0.5" />
               Fully Accredited

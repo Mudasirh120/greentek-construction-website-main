@@ -4,12 +4,15 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
+import { withSeoOverride } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Areas We Cover | Greentek",
-  description:
-    "Greentek delivers solar PV, heat pump, insulation and renovation projects across the West Midlands and Wales, including Solihull, Birmingham, Wolverhampton, Coventry, Dudley, Cardiff and Swansea.",
-};
+export function generateMetadata(): Metadata {
+  return withSeoOverride("/locations", {
+    title: "Areas We Cover",
+    description:
+      "Greentek delivers solar PV, heat pump, insulation and renovation projects across the West Midlands and Wales, including Solihull, Birmingham, Wolverhampton, Coventry, Dudley, Cardiff and Swansea.",
+  });
+}
 
 export default function LocationsPage() {
   return (

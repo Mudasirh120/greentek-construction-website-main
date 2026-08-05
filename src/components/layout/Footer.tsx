@@ -15,11 +15,11 @@ export default function Footer() {
             Get In Touch
           </p>
           <h4
-            className={`  text-white text-[1.8rem] md:text-[2.8rem] font-semibold leading md:leading-12 max-w-[70%] text-center`}
+            className={`  text-white text-[1.8rem] md:text-[2.8rem] font-semibold leading md:leading-12 max-w-[90%] sm:max-w-lg md:max-w-2xl text-center px-4`}
           >
             Ready to Switch to Solar <br /> and Save for Years?
           </h4>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center w-[50%] mx-auto font-normal">
+          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center max-w-[90%] sm:max-w-md mx-auto font-normal">
             Join thousands of happy customers who are already enjoying clean
             energy and significant savings. Get your free consultation today.
           </p>

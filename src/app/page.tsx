@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { withSeoOverride } from "@/lib/seo";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
@@ -5,7 +7,6 @@ import AboutPreview from "@/components/sections/AboutPreview";
 import CorePillars from "@/components/sections/CorePillars";
 import AccreditationsSection from "@/components/sections/AccreditationsSection";
 import BrandsSection from "@/components/sections/BrandsSection";
-import ProjectsGallerySection from "@/components/sections/ProjectsGallerySection";
 import FAQSection from "@/components/sections/FAQSection";
 import Testimonials from "@/components/sections/Testimonials";
 import ServicesGlimpse from "@/components/sections/ServicesGlimpse";
@@ -16,6 +17,14 @@ import CtaSection from "@/components/sections/CtaSection";
 import Areas from "@/components/sections/Areas";
 import Process from "@/components/sections/Process";
 import Projects from "@/components/sections/Projects";
+
+export function generateMetadata(): Metadata {
+  return withSeoOverride("/", {
+    title: "Solar, Heating & Renovation Experts",
+    description:
+      "Greentek delivers solar PV, air source heat pumps, insulation, and construction projects across the West Midlands and Wales. Free quotes, in-house team.",
+  });
+}
 
 export default function HomePage() {
   return (

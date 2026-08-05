@@ -22,6 +22,11 @@ node_modules/
 .vercel/
 .turbo/
 next-env.d.ts
+
+# Local secrets (admin login, GitHub token for the CMS, etc.)
+.env
+.env.local
+.env.*.local
 # Unused Vercel/default assets
 public/images/vercel.svg
 src/favicon.ico

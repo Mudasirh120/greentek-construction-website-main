@@ -112,7 +112,7 @@ export default function Testimonials() {
             <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-black">
               Trusted By Homeowners And Businesses Alike
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-black leading-relaxed text-center w-[70%] md:w-[80%] mx-auto font-medium">
+            <p className="mt-4 text-lg md:text-xl text-black leading-relaxed text-center w-[90%] md:w-[80%] mx-auto font-medium">
               See how our renewable energy solutions are helping customers
               reduce costs, increase efficiency, and gain greater energy
               independence.
