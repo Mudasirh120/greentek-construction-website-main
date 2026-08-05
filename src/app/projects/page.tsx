@@ -3,8 +3,9 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
-import { ArrowRight, MoveHorizontal } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 function useFadeIn(delay = 0) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,6 +33,7 @@ function useFadeIn(delay = 0) {
 }
 
 type Project = {
+  slug: string;
   category: string;
   title: string;
   description: string;
@@ -39,51 +41,8 @@ type Project = {
   after: string;
 };
 
-function BeforeAfterCard({
-  project,
-  delay,
-}: {
-  project: Project;
-  delay: number;
-}) {
+function ProjectCard({ project, delay }: { project: Project; delay: number }) {
   const cardFade = useFadeIn(delay);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [sliderPos, setSliderPos] = useState(50);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const draggingRef = useRef(false);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const observer = new ResizeObserver(([entry]) => {
-      setContainerWidth(entry.contentRect.width);
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  const updatePosFromClientX = useCallback((clientX: number) => {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const pct = ((clientX - rect.left) / rect.width) * 100;
-    setSliderPos(Math.min(100, Math.max(0, pct)));
-  }, []);
-
-  const handlePointerDown = (e: React.PointerEvent) => {
-    draggingRef.current = true;
-    (e.target as Element).setPointerCapture(e.pointerId);
-    updatePosFromClientX(e.clientX);
-  };
-
-  const handlePointerMove = (e: React.PointerEvent) => {
-    if (!draggingRef.current) return;
-    updatePosFromClientX(e.clientX);
-  };
-
-  const handlePointerUp = () => {
-    draggingRef.current = false;
-  };
 
   return (
     <div
@@ -94,67 +53,31 @@ function BeforeAfterCard({
           : "translate-y-6 opacity-0"
       }`}
     >
-      {/* Before/After slider image */}
-      <div
-        ref={containerRef}
-        className="relative rounded-xl overflow-hidden border-8 border-white w-full h-100 select-none touch-none cursor-ew-resize"
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
-      >
-        {/* After image (base layer) */}
-        <img
-          src={project.after}
-          alt={`${project.title} — after`}
-          draggable={false}
-          className="absolute inset-0 w-full h-full object-cover bg-center pointer-events-none"
-        />
-
-        {/* Before image (clipped to slider position) */}
-        <div
-          className="absolute inset-0 overflow-hidden pointer-events-none"
-          style={{ width: `${sliderPos}%` }}
-        >
-          <img
-            src={project.before}
-            alt={`${project.title} — before`}
-            draggable={false}
-            className="h-full object-cover max-w-none"
-            style={{ width: containerWidth || "100%" }}
-          />
-        </div>
-
-        {/* Labels */}
-        <span className="absolute top-3 left-3 bg-[#28282C] text-[#c5eb02] text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">
-          Before
-        </span>
-        <span className="absolute top-3 right-3 h-10 w-10 rounded-full bg-white flex items-center justify-center pointer-events-none">
-          <ArrowRight className="h-5 w-5 text-black" />
-        </span>
-
-        {/* Divider handle */}
-        <div
-          className="absolute top-0 bottom-0 w-0.5 bg-white pointer-events-none"
-          style={{ left: `${sliderPos}%` }}
-        >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white shadow-lg flex items-center justify-center">
-            <MoveHorizontal className="h-4 w-4 text-black" />
-          </div>
-        </div>
-      </div>
+      <BeforeAfterSlider
+        before={project.before}
+        after={project.after}
+        title={project.title}
+      />
 
       {/* Text below image */}
       <div className="pt-5">
         <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
           {project.category}
         </p>
-        <h3 className="text-xl font-semibold mb-2 text-white">
-          {project.title}
-        </h3>
+        <Link href={`/projects/${project.slug}`} className="group">
+          <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#c5eb02] transition-colors">
+            {project.title}
+          </h3>
+        </Link>
         <p className="text-md font-normal text-white/80">
           {project.description}
         </p>
+        <Link
+          href={`/projects/${project.slug}`}
+          className="inline-block mt-4 text-[#c5eb02] font-bold text-sm hover:text-[#c5eb02]/80"
+        >
+          View Project →
+        </Link>
       </div>
     </div>
   );
@@ -184,8 +107,8 @@ export default function ProjectsPage() {
           <div className="mx-auto max-w-7xl px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {siteConfig.projects.map((project, index) => (
-                <BeforeAfterCard
-                  key={project.title}
+                <ProjectCard
+                  key={project.slug}
                   project={project}
                   delay={index * 100}
                 />

@@ -73,7 +73,9 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-5">
             {siteConfig.navLinks.map((link) => {
               const hasDropdown =
-                link.label === "Services" || link.label === "Projects";
+                link.label === "Services" ||
+                link.label === "Projects" ||
+                link.label === "Locations";
 
               return (
                 <div
@@ -123,8 +125,8 @@ export default function Header() {
                           <div className="flex flex-col gap-1">
                             {siteConfig.services.map((service) => (
                               <Link
-                                key={service.title}
-                                href="/services"
+                                key={service.slug}
+                                href={`/services/${service.slug}`}
                                 className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
                               >
                                 <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
@@ -133,12 +135,12 @@ export default function Header() {
                               </Link>
                             ))}
                           </div>
-                        ) : (
+                        ) : link.label === "Projects" ? (
                           <div className="flex flex-col gap-1">
                             {siteConfig.projects.slice(0, 5).map((project) => (
                               <Link
-                                key={project.id}
-                                href="/projects"
+                                key={project.slug}
+                                href={`/projects/${project.slug}`}
                                 className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
                               >
                                 <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
@@ -155,6 +157,30 @@ export default function Header() {
                               className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-green-600 hover:text-green-700"
                             >
                               View All Projects
+                            </Link>
+                          </div>
+                        ) : (
+                          <div className="flex flex-col gap-1">
+                            {siteConfig.locations.map((location) => (
+                              <Link
+                                key={location.slug}
+                                href={`/locations/${location.slug}`}
+                                className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
+                              >
+                                <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
+                                  {location.name}
+                                </span>
+                                <span className="block text-[9px] font-black uppercase tracking-widest text-zinc-400 mt-0.5">
+                                  {location.region}
+                                </span>
+                              </Link>
+                            ))}
+                            <div className="h-px bg-zinc-100 my-1 mx-2" />
+                            <Link
+                              href="/locations"
+                              className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-green-600 hover:text-green-700"
+                            >
+                              View All Areas
                             </Link>
                           </div>
                         )}
@@ -259,7 +285,9 @@ export default function Header() {
           <nav className="flex flex-col px-6 mt-4" role="navigation">
             {siteConfig.navLinks.map((link) => {
               const hasDropdown =
-                link.label === "Services" || link.label === "Projects";
+                link.label === "Services" ||
+                link.label === "Projects" ||
+                link.label === "Locations";
               const isDropdownOpen = openDropdown === link.label;
               const isActive = pathname === link.href;
 
@@ -317,24 +345,35 @@ export default function Header() {
                         {link.label === "Services"
                           ? siteConfig.services.map((service) => (
                               <Link
-                                key={service.title}
-                                href="/services"
+                                key={service.slug}
+                                href={`/services/${service.slug}`}
                                 onClick={() => setIsMenuOpen(false)}
                                 className="text-base text-white/60 hover:text-white transition-colors"
                               >
                                 {service.title}
                               </Link>
                             ))
-                          : siteConfig.projects.slice(0, 5).map((project) => (
-                              <Link
-                                key={project.id}
-                                href="/projects"
-                                onClick={() => setIsMenuOpen(false)}
-                                className="text-base text-white/60 hover:text-white transition-colors"
-                              >
-                                {project.title}
-                              </Link>
-                            ))}
+                          : link.label === "Projects"
+                            ? siteConfig.projects.slice(0, 5).map((project) => (
+                                <Link
+                                  key={project.slug}
+                                  href={`/projects/${project.slug}`}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="text-base text-white/60 hover:text-white transition-colors"
+                                >
+                                  {project.title}
+                                </Link>
+                              ))
+                            : siteConfig.locations.map((location) => (
+                                <Link
+                                  key={location.slug}
+                                  href={`/locations/${location.slug}`}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className="text-base text-white/60 hover:text-white transition-colors"
+                                >
+                                  {location.name}
+                                </Link>
+                              ))}
                       </div>
                     </div>
                   )}

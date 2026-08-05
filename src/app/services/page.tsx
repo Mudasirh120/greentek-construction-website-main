@@ -4,6 +4,7 @@ import { siteConfig } from "@/data/site";
 import Process from "@/components/sections/Process";
 import Projects from "@/components/sections/Projects";
 import Image from "next/image";
+import Link from "next/link";
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -27,9 +28,10 @@ export default function ServicesPage() {
         <section className="py-12 lg:py-24">
           <div className="mx-auto max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              {siteConfig.services.map((service, index) => (
-                <div
-                  key={index}
+              {siteConfig.services.map((service) => (
+                <Link
+                  href={`/services/${service.slug}`}
+                  key={service.slug}
                   className="group relative rounded-xl bg-[#101314]  hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex gap-6 "
                 >
                   <div className="h-full w-[40%]">
@@ -49,8 +51,11 @@ export default function ServicesPage() {
                     <p className="text-white/80 leading-relaxed font-medium">
                       {service.description}
                     </p>
+                    <span className="mt-4 text-[#c5eb02] font-bold text-sm">
+                      Learn More →
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

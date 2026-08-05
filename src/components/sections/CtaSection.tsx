@@ -130,27 +130,39 @@ type FormState = {
   consent: boolean;
 };
 
-const initialState: FormState = {
-  full_name: "",
-  email: "",
-  phone: "",
-  postcode: "",
-  service: "",
-  property_type: "",
-  is_homeowner: "",
-  timeline: "",
-  message: "",
-  consent: false,
-};
-
 const inputClasses =
   "w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm border border-transparent focus:border-[#c5eb02] focus:ring-4 focus:ring-[#c5eb02]/10 transition-all outline-none font-medium text-white placeholder:text-white/60 text-sm";
 
 const labelClasses = "text-xs font-bold text-white ml-1";
 
-export default function CtaSection() {
+interface CtaSectionProps {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  defaultService?: string;
+}
+
+export default function CtaSection({
+  eyebrow = "Get In Touch",
+  heading = "Get a free quote",
+  description = "Solar, heating, insulation, or a full refurb, tell us what you're looking at and we'll come back within one business day with a straight answer, a plan and a real quote.",
+  defaultService = "",
+}: CtaSectionProps) {
   const contentFade = useFadeIn(0);
   const formFade = useFadeIn(150);
+
+  const initialState: FormState = {
+    full_name: "",
+    email: "",
+    phone: "",
+    postcode: "",
+    service: defaultService,
+    property_type: "",
+    is_homeowner: "",
+    timeline: "",
+    message: "",
+    consent: false,
+  };
 
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<
@@ -221,15 +233,13 @@ export default function CtaSection() {
             }`}
           >
             <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center">
-              Get In Touch
+              {eyebrow}
             </p>
             <h2 className="text-[1.75rem] sm:text-4xl md:text-[2.75rem] font-bold leading-[1.15] tracking-tight text-white mb-4">
-              Get a free quote
+              {heading}
             </h2>
             <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-              Solar, heating, insulation, or a full refurb, tell us what you're
-              looking at and we'll come back within one business day with a
-              straight answer, a plan and a real quote.
+              {description}
             </p>
 
             {/* <ul className="space-y-3 mb-8">
