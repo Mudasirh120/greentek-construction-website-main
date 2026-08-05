@@ -1,69 +1,54 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
-
+import Process from "@/components/sections/Process";
+import Projects from "@/components/sections/Projects";
+import Image from "next/image";
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      
-      <main className="flex-1 bg-white">
-        {/* Header - Centered */}
-        <section className="bg-zinc-50 py-12 lg:py-24 border-b border-zinc-100">
-          <div className="mx-auto max-w-7xl px-6 text-center">
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-zinc-900">
-              Our Professional <span className="text-green-700">Services</span>
+      <main className="flex-1">
+        <section className="relative  bg-[url('/images/footer/footer-bg.webp')] bg-cover overflow-hidden">
+          <div className="bg-black/60 pt-30 py-20">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white  mx-auto text-center">
+              Our <span className="text-[#c5eb02]">Services</span>
             </h1>
-            <p className="mt-6 text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed font-medium">
-              From air source heat pump installation and solar PV systems to property refurbishment, loft insulation, and building extensions—
-              Greentek delivers comprehensive construction and renewable energy solutions tailored to your needs.
+            <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium text-center">
+              From air source heat pump installation and solar PV systems to
+              property refurbishment, loft insulation, and building extensions,
+              Greentek delivers comprehensive construction and renewable energy
+              solutions tailored to your needs.
             </p>
-            <div className="mt-8 flex justify-center">
-              <div className="h-1.5 w-16 bg-green-600 rounded-full" />
-            </div>
+            <div className="mt-8 flex justify-center"></div>
           </div>
         </section>
 
-        {/* Services Grid - 2 per row */}
         <section className="py-12 lg:py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {siteConfig.services.map((service, index) => (
-                  <div 
-                  key={index} 
-                  className="group relative p-6 md:p-8 rounded-[2.5rem] bg-zinc-50 border border-zinc-100 hover:bg-white hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                <div
+                  key={index}
+                  className="group relative rounded-xl bg-[#101314]  hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex gap-6 "
                 >
-                  {/* Hover Accent */}
-                  <div className="absolute top-0 left-0 w-2 h-0 bg-green-600 group-hover:h-full transition-all duration-500" />
-                  
-                  <div className="relative">
-                    <div className="w-16 h-16 bg-green-700 text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-green-900/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      {/* Dynamic Icons based on index */}
-                      {index === 0 && <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>}
-                      {index === 1 && <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>}
-                      {index === 2 && <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>}
-                      {index === 3 && <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
-                      {index >= 4 && <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>}
-                    </div>
-                    
-                    <h3 className="text-[1.25rem] md:text-[1.5rem] font-bold leading-[1.3] text-zinc-900 mb-4 group-hover:text-green-700 transition-colors">
+                  <div className="h-full w-[40%]">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="h-full w-[60%] py-4 px-6 flex flex-col justify-center">
+                    <h3 className="text-[1.25rem] md:text-[1.5rem] font-semibold leading-[1.3] text-white mb-4 group-hover:text-[#c5eb02] transition-colors">
                       {service.title}
                     </h3>
-                    
-                    <p className="text-zinc-600 leading-relaxed mb-8 font-medium">
+
+                    <p className="text-white/80 leading-relaxed font-medium">
                       {service.description}
                     </p>
-                    
-                    <div className="flex flex-wrap gap-4">
-                      <span className="inline-flex items-center text-xs font-black uppercase tracking-widest text-zinc-400 group-hover:text-green-600 transition-colors">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                        Expert Delivery
-                      </span>
-                      <span className="inline-flex items-center text-xs font-black uppercase tracking-widest text-zinc-400 group-hover:text-green-600 transition-colors">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                        Quality Assured
-                      </span>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -71,21 +56,8 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-12 lg:py-24 bg-zinc-900 text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-green-600/10 blur-[100px] rounded-full" />
-          <div className="mx-auto max-w-7xl px-6 text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Need a Custom Solution?</h2>
-            <p className="mt-6 text-zinc-400 max-w-2xl mx-auto text-lg font-medium">
-              Our team of experts is ready to help with solar installations, air source heat pump conversions, boiler upgrades, property refurbishment, or building extensions across West Midlands and Wales.
-            </p>
-            <div className="mt-12">
-              <a href="/contact" className="inline-flex items-center justify-center px-6 md:px-8 py-4 rounded-2xl bg-green-700 text-white font-black text-sm uppercase tracking-widest hover:bg-green-600 transition-all shadow-xl shadow-green-900/20">
-                Start My Project
-              </a>
-            </div>
-          </div>
-        </section>
+        <Process />
+        <Projects />
       </main>
 
       <Footer />

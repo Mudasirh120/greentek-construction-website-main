@@ -130,7 +130,7 @@ export default function WhyUs() {
         </div>
       </div>
       <div className="grid grid-cols-3 gap-3 md:gap-4">
-        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-4 px-4 md:py-6 md:px-6 ">
           <Award className="text-[#C5EB02] w-8 h-8 mb-4" />
           <h3 className="mb-2 font-semibold text-xl">BRAND AGNOSTIC</h3>
           <p className="text-white/80 text-md">
@@ -138,7 +138,7 @@ export default function WhyUs() {
             requirements.
           </p>
         </div>
-        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-4 px-4 md:py-6 md:px-6">
           <Users className="text-[#C5EB02] w-8 h-8 mb-4" />
           <h3 className="mb-2 font-semibold text-xl">FULL LIFECYCLE SUPPORT</h3>
           <p className="text-white/80 text-md">
@@ -146,7 +146,7 @@ export default function WhyUs() {
             maintenance, we stay by your side.
           </p>
         </div>
-        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-3 px-3">
+        <div className="bg-[#101314] rounded-xl border border-[#C5EB02] py-4 px-4 md:py-6 md:px-6 ">
           <Handshake className="text-[#C5EB02] w-8 h-8 mb-4" />
           <h3 className="mb-2 font-semibold text-xl">
             OUR STANDARD. YOUR GUARANTEE.

@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="bg-[url('/images/footer/footer-bg.webp')] bg-cover bg-center border-t border-zinc-900">
       <div className="bg-black/60 pt-18">
         <div className="mx-auto w-full flex flex-col items-center justify-center">
-          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
             Get In Touch
           </p>
           <h4

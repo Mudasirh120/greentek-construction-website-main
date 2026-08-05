@@ -8,13 +8,14 @@ export const siteConfig = {
     line1: "6060 Knights Court, Birmingham Business Park, Ground Floor",
     city: "Solihull",
     region: "West Midlands",
-    postcode: "B37 7WY"
+    postcode: "B37 7WY",
   },
   companyNo: "13013349",
   location: "United Kingdom",
   social: {
     facebook: "https://facebook.com/greentekenergy",
-    instagram: "https://www.instagram.com/greentekenergy.uk?igsh=cHk4b3VnaTdtMTRo",
+    instagram:
+      "https://www.instagram.com/greentekenergy.uk?igsh=cHk4b3VnaTdtMTRo",
     linkedin: "https://linkedin.com/company/greentekenergy",
   },
   navLinks: [
@@ -33,20 +34,64 @@ export const siteConfig = {
   ],
   services: [
     {
-      title: "Renewable Energy & Heating",
-      description: "Air source heat pumps, solar PV installation, boiler upgrades, and new central heating systems for sustainable energy solutions",
+      title: "Solar PV Installations",
+      description:
+        "Solar PV systems across the UK to help homeowners reduce energy bills and improve energy efficiency.",
+      image: "/images/projects/Solar/after.png",
     },
     {
-      title: "Building Extensions & Conversions",
-      description: "Kitchen extensions, bathroom extensions, lounge extensions, and loft conversions to expand your property",
+      title: "Air Source Heat Pump Installations",
+      description:
+        "Efficient air source heat pumps for residential and commercial properties, providing sustainable heating solutions.",
+      image: "/images/projects/Heating/after.webp",
     },
     {
-      title: "Property Refurbishment",
-      description: "Complete house refurbishment, kitchen refurbishment, bathroom refurbishment, and property makeovers with expert craftsmanship",
+      title: "Complete Heating System Upgrades",
+      description:
+        "Complete heating system replacements including boiler installations, radiators, pipework and controls.",
+      image: "/images/projects/heating-system.jpg",
     },
     {
-      title: "Insulation & Efficiency",
-      description: "Loft insulation, external wall insulation, and energy efficiency upgrades for reduced utility costs",
+      title: "Loft Insulation",
+      description:
+        "Professional loft insulation to reduce heat loss, lower energy bills and improve year-round comfort in your home.",
+      image: "/images/projects/loft-insulation.jpg",
+    },
+    {
+      title: "External Wall Insulation & Rendering",
+      description:
+        "External wall insulation and rendering solutions to improve thermal performance, protect your home and enhance its appearance.",
+      image: "/images/projects/External Wall Insulation/after.jpg",
+    },
+    {
+      title: "Loft Conversions",
+      description:
+        "Expert loft conversions that maximise your existing space and add value to your property. From concept to completion.",
+      image: "/images/projects/loft-conversion.jpg",
+    },
+    {
+      title: "Kitchen Renovations",
+      description:
+        "Complete kitchen refurbishment projects delivered from design through to installation and final finishing..",
+      image: "/images/projects/kitchen-conversion.jpg",
+    },
+    {
+      title: "Single Storey Extension",
+      description:
+        "Complete kitchen refurbishment projects delivered from design through to installation and final finishing.",
+      image: "/images/projects/single-extension.jpg",
+    },
+    {
+      title: "Living Room Improvements",
+      description:
+        "Contemporary living room design with custom media wall, ambient lighting and high-quality finishes throughout.",
+      image: "/images/projects/living-room-improvement.jpg",
+    },
+    {
+      title: "Full Home Renovation",
+      description:
+        "Complete home renovation from start to finish, transforming the property throughout to the highest standard.",
+      image: "/images/projects/full-home-renovation.jpg",
     },
   ],
   whyChooseUs: [
@@ -61,7 +106,8 @@ export const siteConfig = {
     },
     {
       title: "Professional Team",
-      description: "Experienced architects, engineers, and construction experts",
+      description:
+        "Experienced architects, engineers, and construction experts",
     },
     {
       title: "Transparent Communication",
@@ -82,13 +128,37 @@ export const siteConfig = {
     { name: "Hive", src: "/images/brands/31-500x500.png" },
   ],
   projects: [
-    { id: 1, title: "Solar PV Installation", category: "Renewable Energy", src: "/images/gallery/Gemini_Generated_Image_qsil0mqsil0mqsil.png" },
-    { id: 2, title: "Property Refurbishment", category: "House Makeover", src: "/images/gallery/WhatsApp Image 2026-04-23 at 11.35.03 AM.jpeg" },
-    { id: 3, title: "Air Source Heat Pump Installation", category: "Heating System", src: "/images/gallery/WhatsApp Image 2026-04-23 at 1.23.16 PM.jpeg" },
-    { id: 4, title: "External Wall Insulation", category: "Efficiency Solution", src: "/images/gallery/vc.png" },
-    { id: 5, title: "Loft Conversion", category: "Extension", src: "/images/gallery/pr.png" },
-    { id: 6, title: "Building Extension", category: "Residential", src: "/images/gallery/pr7.png" },
-    { id: 7, title: "Commercial Solar Installation", category: "Renewable Energy", src: "/images/gallery/xyz.png" },
-    { id: 8, title: "Bathroom Refurbishment", category: "Interior", src: "/images/gallery/xyzw.png" },
+    {
+      category: "Solar & Energy",
+      title: "Solar PV Installation",
+      description:
+        "Rooftop solar system installed for a family home, cutting grid dependence and lowering monthly bills.",
+      before: "/images/projects/Solar/before.png",
+      after: "/images/projects/Solar/after.png",
+    },
+    {
+      category: "Home Improvement",
+      title: "Air Source Heat Pump Conversion",
+      description:
+        "Boiler-to-ASHP conversion delivering efficient, low-carbon heating for a semi-detached property.",
+      before: "/images/projects/Heating/before.png",
+      after: "/images/projects/Heating/after.webp",
+    },
+    {
+      category: "Home Improvement",
+      title: "External Wall Insulation",
+      description:
+        "Full external wall insulation upgrade, reducing heat loss and modernising an older property's exterior.",
+      before: "/images/projects/External Wall Insulation/before.jpeg",
+      after: "/images/projects/External Wall Insulation/after.jpg",
+    },
+    {
+      category: "Renovation",
+      title: "Full Property Refurbishment",
+      description:
+        "Kitchen, bathroom, and extension refurbishment completed alongside an energy efficiency upgrade.",
+      before: "/images/projects/Extension 2/before.jpeg",
+      after: "/images/projects/Extension 2/after.jpeg",
+    },
   ],
 };
