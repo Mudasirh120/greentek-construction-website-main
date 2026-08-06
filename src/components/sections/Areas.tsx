@@ -100,7 +100,7 @@ export default function Areas() {
             <img
               src={largeArea.image}
               alt={largeArea.name}
-              className="absolute inset-0 w-full h-full object-cover position-center"
+              className="absolute inset-0 w-full h-full object-cover position-center group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="relative z-10 h-full flex flex-col justify-end p-6">
@@ -120,6 +120,7 @@ export default function Areas() {
             <div
               key={area.name}
               className="relative rounded-md overflow-hidden min-h-[160px]"
+              onClick={() => (window.location.href = area.path)}
             >
               <img
                 src={area.image}
@@ -143,10 +144,7 @@ export default function Areas() {
         {/* Marquee ticker */}
         <div className="mt-4 relative flex items-center bg-zinc-900 rounded-md overflow-hidden h-16">
           <div className="flex-shrink-0 z-10 h-full flex flex-col justify-center px-6 bg-zinc-900">
-            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-zinc-400">
-              Plus
-            </p>
-            <p className="text-white text-sm font-black uppercase tracking-tight leading-none whitespace-nowrap">
+            <p className="text-white text-sm font-semibold uppercase leading-none whitespace-nowrap">
               More Areas
             </p>
           </div>
@@ -167,7 +165,7 @@ export default function Areas() {
         </div>
         <div className="mt-16 flex justify-center items-center">
           <a
-            href="/services"
+            href="/locations"
             className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
           >
             View All Areas{" "}
