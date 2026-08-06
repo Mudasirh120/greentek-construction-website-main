@@ -7,7 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { withSeoOverride } from "@/lib/seo";
 
-const ENERGY_FORM_CATEGORIES = ["solar_storage", "heating_boiler", "insulation"];
+const ENERGY_FORM_CATEGORIES = [
+  "solar_storage",
+  "heating_boiler",
+  "insulation",
+];
 
 export function generateMetadata(): Metadata {
   return withSeoOverride("/energy-solutions", {
@@ -31,13 +35,14 @@ export default function EnergySolutionsPage() {
             <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
               Energy Solutions
             </p>
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mx-auto text-center">
-              Power Your Property For <span className="text-[#c5eb02]">Less</span>
+            <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mx-auto text-center">
+              Power Your Property For{" "}
+              <span className="text-[#c5eb02]">Less</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium text-center">
               Turnkey multi-measure energy upgrades, from Solar PV to
-              high-efficiency thermal systems, delivered by one accredited
-              team from day one.
+              high-efficiency thermal systems, delivered by one accredited team
+              from day one.
             </p>
           </div>
         </section>

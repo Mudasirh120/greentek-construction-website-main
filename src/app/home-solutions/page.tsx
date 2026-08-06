@@ -31,7 +31,7 @@ export default function HomeSolutionsPage() {
             <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
               Home Solutions
             </p>
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mx-auto text-center">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mx-auto text-center">
               A Home That Works <span className="text-[#c5eb02]">Harder</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium text-center">
