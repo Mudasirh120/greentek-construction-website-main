@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Hanken_Grotesk  } from "next/font/google";
+import { Inter, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 import FloatingActions from "@/components/ui/FloatingActions";
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     "energy solutions",
   ],
   icons: {
-    icon: "/images/magnific_3003063144.png",
-    apple: "/images/magnific_3003063144.png",
+    icon: "/images/favicon.ico",
+    apple: "/images/apple.png",
   },
   openGraph: {
     title: siteConfig.name,
@@ -61,7 +61,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased selection:bg-green-100 selection:text-green-900`}>
+      <body
+        className={`${inter.className} antialiased selection:bg-green-100 selection:text-green-900`}
+      >
         <div className="relative flex min-h-screen flex-col overflow-x-hidden">
           {children}
           <FloatingActions />

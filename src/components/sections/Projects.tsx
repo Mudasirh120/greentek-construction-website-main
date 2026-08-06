@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, MoveHorizontal } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 function useFadeIn(delay = 0) {
@@ -32,6 +33,7 @@ function useFadeIn(delay = 0) {
 // Copy is generic on purpose; add real specifics (locations, system sizes,
 // savings figures) once confirmed.
 type Project = {
+  slug: string;
   category: string;
   title: string;
   description: string;
@@ -41,6 +43,7 @@ type Project = {
 
 const projects: Project[] = [
   {
+    slug: "solar-pv-installation",
     category: "Solar & Energy",
     title: "Solar PV Installation",
     description:
@@ -49,6 +52,7 @@ const projects: Project[] = [
     after: "/images/projects/Solar/after.png",
   },
   {
+    slug: "air-source-heat-pump-conversion",
     category: "Home Improvement",
     title: "Air Source Heat Pump Conversion",
     description:
@@ -57,6 +61,7 @@ const projects: Project[] = [
     after: "/images/projects/Heating/after.webp",
   },
   {
+    slug: "external-wall-insulation",
     category: "Home Improvement",
     title: "External Wall Insulation",
     description:
@@ -65,6 +70,7 @@ const projects: Project[] = [
     after: "/images/projects/External Wall Insulation/after.jpg",
   },
   {
+    slug: "full-property-refurbishment",
     category: "Renovation",
     title: "Full Property Refurbishment",
     description:
@@ -132,7 +138,7 @@ function BeforeAfterCard({
       {/* Before/After slider image */}
       <div
         ref={containerRef}
-        className="relative rounded-xl overflow-hidden border-8 border-white w-full h-100 select-none touch-none cursor-ew-resize"
+        className="relative rounded-md overflow-hidden border-6 border-white w-full h-100 select-none touch-none cursor-ew-resize"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -164,9 +170,13 @@ function BeforeAfterCard({
         <span className="absolute top-3 left-3 bg-[#28282C] text-[#c5eb02] text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full pointer-events-none">
           Before
         </span>
-        <span className="absolute top-3 right-3 h-10 w-10 rounded-full bg-white flex items-center justify-center pointer-events-none">
+        <Link
+          href={`/projects/${project.slug}`}
+          aria-label={`View ${project.title} project`}
+          className="absolute top-3 right-3 h-10 w-10 rounded-full bg-white flex items-center justify-center hover:bg-[#c5eb02] transition-colors"
+        >
           <ArrowRight className="h-5 w-5 text-black" />
-        </span>
+        </Link>
 
         {/* Divider handle */}
         <div
@@ -180,17 +190,17 @@ function BeforeAfterCard({
       </div>
 
       {/* Text below image */}
-      <div className="pt-5">
+      <Link href={`/projects/${project.slug}`} className="block pt-5 group">
         <p className="text-[10px] font-semibold uppercase  mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
           {project.category}
         </p>
-        <h3 className="text-xl font-semibold mb-2 text-white">
+        <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-[#c5eb02] transition-colors">
           {project.title}
         </h3>
         <p className="text-md font-normal text-white/80">
           {project.description}
         </p>
-      </div>
+      </Link>
     </div>
   );
 }
