@@ -59,13 +59,13 @@ export default function AccreditationsSection() {
 
         {/* Logos */}
         <div
-          className="w-full grid grid-cols-2 md:grid-cols-4 items-center gap-6 md:gap-8"
+          className="w-full grid grid-cols-4 items-center justify-center md:grid-cols-4 gap-6 md:gap-8"
           role="region"
           aria-label="Accreditation logos"
         >
           {accreditations.map((logo) => (
             <div key={logo.name} className="">
-              <div className="relative w-20 h-10 md:w-45 md:h-25">
+              <div className="relative w-25 h-25 md:w-45 md:h-25">
                 <Image
                   src={logo.src}
                   alt={logo.name}

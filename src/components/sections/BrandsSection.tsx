@@ -68,7 +68,7 @@ export default function BrandsSection() {
           >
             Trusted by Industry Leaders.
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center w-0/2 md:w-[85%] mx-auto font-normal">
+          <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed text-center w-full md:w-[85%] mx-auto font-normal">
             Strategic partnerships with leading global manufacturers to deliver
             high-performance hardware.
           </p>

@@ -158,7 +158,7 @@ export default function ServicesGlimpse() {
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
             Eenergy. Built. Maintained.
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center w-0/2 md:w-3/4 mx-auto font-normal">
+          <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed text-center w-full md:w-3/4 mx-auto font-normal">
             From solar and heating to refurbishments and extensions, we design,
             install and maintain it all. One team, start to finish, instead of a
             different contractor for every job.

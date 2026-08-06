@@ -181,7 +181,7 @@ function BeforeAfterCard({
 
       {/* Text below image */}
       <div className="pt-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
+        <p className="text-[10px] font-semibold uppercase  mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
           {project.category}
         </p>
         <h3 className="text-xl font-semibold mb-2 text-white">
@@ -215,7 +215,7 @@ export default function Projects() {
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
             See the Difference.
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed text-center w-0/2 md:w-[85%] mx-auto font-normal">
+          <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed text-center w-[80%] md:w-[85%] mx-auto font-normal">
             Drag the slider on each project to see the before and after — solar,
             home improvement, and renovation work, side by side.
           </p>

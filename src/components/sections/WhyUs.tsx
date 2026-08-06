@@ -104,7 +104,7 @@ export default function WhyUs() {
   const journeyFade = useFadeIn(100);
 
   return (
-    <section className="gap-4 md:gap-6 py-10 lg:py-14 overflow-hidden mx-auto px-4 md:px-10">
+    <section className="gap-4 md:gap-6 py-10 lg:pt-14 lg:pb-4 overflow-hidden mx-auto px-4 md:px-10">
       {" "}
       <div>
         {/* Centered heading block */}
@@ -123,7 +123,7 @@ export default function WhyUs() {
             Three Reasons
             <br /> Home Owners Trust Us.
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center mx-auto">
+          <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed w-[80%] text-center md:w-3/4 font-normal mx-auto">
             Accreditation, experience, and accountability built into every
             project we take on.
           </p>

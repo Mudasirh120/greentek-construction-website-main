@@ -22,16 +22,22 @@ export default function Header() {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflowY = "hidden";
-      document.body.style.touchAction = "none";
-    } else {
-      document.body.style.overflowY = "";
-      document.body.style.touchAction = "";
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.overflowY = "scroll";
+
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.overflowY = "";
+        window.scrollTo(0, scrollY);
+      };
     }
-    return () => {
-      document.body.style.overflowY = "";
-      document.body.style.touchAction = "";
-    };
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -55,8 +61,8 @@ export default function Header() {
       `}</style>
 
       {/* Header Container */}
-      <header className="w-full sticky top-0 left-0 z-[60] flex justify-center bg-black/10 backdrop-blur-3xl border-b border-[#c5eb02]">
-        <div className="flex w-full max-w-7xl items-center justify-between px-4 py-3 bg-transparent">
+      <header className="max-w-7xl px-8 sticky top-0 left-0 z-[60] flex justify-center bg-black/10 backdrop-blur-3xl border-b border-[#c5eb02]">
+        <div className="flex w-full items-center justify-between px-4 py-3 bg-transparent">
           {/* Logo */}
           <Link href="/" className="flex items-center z-[70]">
             <Image
@@ -120,16 +126,16 @@ export default function Header() {
                           : "opacity-0 -translate-y-2 pointer-events-none"
                       }`}
                     >
-                      <div className="bg-white rounded-2xl shadow-2xl shadow-zinc-900/10 border border-zinc-100 p-3 overflow-hidden">
+                      <div className="bg-[#000000] rounded-2xl shadow-2xl shadow-zinc-900/10 border border-[#c5eb02]/40 p-3 overflow-hidden">
                         {link.label === "Services" ? (
                           <div className="flex flex-col gap-1">
                             {siteConfig.services.map((service) => (
                               <Link
                                 key={service.slug}
                                 href={`/services/${service.slug}`}
-                                className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
+                                className="px-4 py-3 rounded-xl hover:bg-[#c5eb02] transition-colors group/item"
                               >
-                                <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
+                                <span className="block text-xs font-bold text-white group-hover/item:text-black transition-colors">
                                   {service.title}
                                 </span>
                               </Link>
@@ -141,20 +147,17 @@ export default function Header() {
                               <Link
                                 key={project.slug}
                                 href={`/projects/${project.slug}`}
-                                className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
+                                className="px-4 py-3 rounded-xl hover:bg-[#c5eb02] transition-colors group/item"
                               >
-                                <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
+                                <span className="block text-xs font-bold text-white group-hover/item:text-black transition-colors">
                                   {project.title}
-                                </span>
-                                <span className="block text-[9px] font-black uppercase tracking-widest text-zinc-400 mt-0.5">
-                                  {project.category}
                                 </span>
                               </Link>
                             ))}
                             <div className="h-px bg-zinc-100 my-1 mx-2" />
                             <Link
                               href="/projects"
-                              className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-green-600 hover:text-green-700"
+                              className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-[#c5eb02] hover:text-[#c5eb02]/80"
                             >
                               View All Projects
                             </Link>
@@ -165,20 +168,17 @@ export default function Header() {
                               <Link
                                 key={location.slug}
                                 href={`/locations/${location.slug}`}
-                                className="px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group/item"
+                                className="px-4 py-3 rounded-xl hover:bg-[#c5eb02] transition-colors group/item"
                               >
-                                <span className="block text-xs font-bold text-zinc-900 group-hover/item:text-green-700 transition-colors">
+                                <span className="block text-xs font-bold text-white group-hover/item:text-black transition-colors">
                                   {location.name}
-                                </span>
-                                <span className="block text-[9px] font-black uppercase tracking-widest text-zinc-400 mt-0.5">
-                                  {location.region}
                                 </span>
                               </Link>
                             ))}
                             <div className="h-px bg-zinc-100 my-1 mx-2" />
                             <Link
                               href="/locations"
-                              className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-green-600 hover:text-green-700"
+                              className="px-4 py-2 text-center text-[10px] font-black uppercase tracking-widest text-[#c5eb02] hover:text-[#c5eb02]/80"
                             >
                               View All Areas
                             </Link>
@@ -220,17 +220,17 @@ export default function Header() {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               <span
-                className={`w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 transform ${
+                className={`w-6 h-0.5 bg-[#c5eb02] rounded-full transition-all duration-300 transform ${
                   isMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 ${
+                className={`w-6 h-0.5 bg-[#c5eb02] rounded-full transition-all duration-300 ${
                   isMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 transform ${
+                className={`w-6 h-0.5 bg-[#c5eb02] rounded-full transition-all duration-300 transform ${
                   isMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
@@ -241,24 +241,29 @@ export default function Header() {
 
       {/* Mobile Menu Overlay (unchanged) */}
       <div
-        className={`fixed inset-0 z-[100] lg:hidden mobile-menu-transition bg-black/85 backdrop-blur-custom ${
+        className={`fixed inset-0 z-[100] lg:hidden mobile-menu-transition bg-black/85 backdrop-blur-custom overflow-y-auto overscroll-contain ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onClick={(e) => {
           if (e.target === e.currentTarget) setIsMenuOpen(false);
         }}
       >
-        <div className="flex flex-col h-full bg-transparent w-full">
+        <div className="flex flex-col min-h-full bg-transparent w-full">
           {/* Overlay Header */}
-          <div className="flex justify-between items-center px-6 pt-8 pb-6">
+          <div className="flex justify-between items-center px-4 pt-4 pb-6">
             <Link
               href="/"
+              className="flex items-center z-[70]"
               onClick={() => setIsMenuOpen(false)}
-              className="flex items-center"
             >
-              <span className="text-white font-black text-2xl tracking-tight">
-                GREENTEK<span className="text-green-400">.</span>
-              </span>
+              <Image
+                src="/images/home-page/greentek-logo.png"
+                alt="Greentek"
+                width={180}
+                height={60}
+                className="h-8 md:h-10 lg:h-12 w-auto object-contain"
+                priority
+              />
             </Link>
             <button
               onClick={() => setIsMenuOpen(false)}
@@ -300,8 +305,8 @@ export default function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`text-xl font-bold transition-colors ${
-                        isActive ? "text-green-400" : "text-white"
+                      className={`text-sm font-semibold transition-colors ${
+                        isActive ? "text-[#c5eb02]" : "text-white"
                       }`}
                     >
                       {link.label.toUpperCase()}
@@ -341,7 +346,7 @@ export default function Header() {
                         isDropdownOpen ? "max-h-96 pb-6" : "max-h-0"
                       }`}
                     >
-                      <div className="pl-5 border-l border-green-500/50 ml-2 flex flex-col gap-4">
+                      <div className="pl-5 border-l border-[#c5eb02]/50 ml-2 flex flex-col gap-4">
                         {link.label === "Services"
                           ? siteConfig.services.map((service) => (
                               <Link
@@ -387,9 +392,9 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="block w-full py-5 bg-green-600 text-white font-black text-sm tracking-[0.2em] rounded-full text-center active:scale-95 transition shadow-2xl shadow-green-900/40"
+              className="block w-full py-5 bg-[#c5eb02] text-black font-black text-sm tracking-[0.2em] rounded-full text-center active:scale-95 transition shadow-2xl shadow-[#c5eb02]/40"
             >
-              START PROJECT
+              Start Project
             </Link>
           </div>
         </div>

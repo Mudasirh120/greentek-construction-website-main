@@ -26,34 +26,33 @@ function useFadeIn(delay = 0) {
 
 const reviews = [
   {
-    name: "Dana J.",
-    src: "/images/reviews/client-1.avif",
+    name: "Amjid H.",
+    src: "/images/reviews/amjid.png",
     words:
-      "The team at GreenTek transformed our home with their solar installation. The process was seamless and the results exceeded our expectations.",
+      "I got my insulation done by greentek they were fantastic from the start. On the way we had one two problems from the contractors but greentek took care of it! Kept me informed and solved the issues. They communicated consistently and kept me in the loop.",
     title: "Home Owner",
     rating: 5,
   },
   {
-    name: "Marcus T.",
-    src: "/images/reviews/client-1.avif",
+    name: "Luki",
+    src: "/images/reviews/luki.png",
     words:
-      "From consultation to installation, GreenTek made switching to solar effortless. Highly recommend their team.",
+      "We required an urgent new boiler installation due to the old one breaking down and being unrepairable. Greentek Energy supplied and fitted a new one at very short notice so our tenants could have heating and hot water again. We are very grateful to Greentek Energy and would recommend them highly.",
     title: "Business Owner",
     rating: 5,
   },
   {
-    name: "Priya R.",
-    src: "/images/reviews/client-1.avif",
+    name: "Ian B.",
+    src: "/images/reviews/ian.png",
     words:
-      "Professional, punctual, and our energy bills dropped significantly within the first month.",
+      "Part of the Ecobility company. the people at Greentek know their stuff. Got a quote in just under 20 minutes where others insisted on coming around the house. They were cheaper too!",
     title: "Home Owner",
     rating: 5,
   },
   {
-    name: "Sam K.",
-    src: "/images/reviews/client-1.avif",
-    words:
-      "Excellent communication throughout the whole project. Couldn't be happier with the results.",
+    name: "Omer M.",
+    src: "/images/reviews/omer.png",
+    words: "Quick and efficient service.",
     title: "Home Owner",
     rating: 5,
   },
@@ -61,28 +60,29 @@ const reviews = [
 
 function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
   return (
-    <div className="flex-shrink-0 w-[320px] md:w-[380px] bg-black/40 backdrop-blur-[2px] border border-[#c5eb02]/60 rounded-xl px-4 md:px-6 py-2 md:py-4 mx-3">
-      <div className="flex gap-4 py-2 md:py-4 items-center">
-        <div>
-          <Image
-            src={review.src}
-            alt={review.name}
-            width={100}
-            height={100}
-            className="w-15 h-15 rounded-full object-cover"
-          />
+    <div className="flex flex-col justify-between w-[320px] md:w-[380px] bg-black/40 backdrop-blur-[2px] border border-[#c5eb02]/60 rounded-xl px-4 md:px-6 py-2 md:py-4 mx-3">
+      <div>
+        <div className="flex gap-4 py-2 md:py-4 items-center">
+          <div>
+            <Image
+              src={review.src}
+              alt={review.name}
+              width={100}
+              height={100}
+              className="w-15 h-15 rounded-full object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-white">{review.name}</p>
+            <p className="text-md text-white/70">{review.title}</p>
+          </div>
         </div>
-        <div>
-          <p className="text-2xl font-bold text-white">{review.name}</p>
-          <p className="text-md text-white/70">{review.title}</p>
+        <div className="my-3">
+          <p className="text-white">{review.words}</p>
         </div>
-      </div>
-      <div className="my-3">
-        <p className="text-white">{review.words}</p>
       </div>
       <div className="flex flex-col items-end">
         <p className="text-yellow-500 text-2xl">{"★".repeat(review.rating)}</p>
-        <p>Job Satisfaction</p>
       </div>
     </div>
   );
@@ -96,7 +96,7 @@ export default function Testimonials() {
   return (
     <section className="bg-[url('/images/home-page/Solar-field-bg.avif')] bg-cover bg-center overflow-hidden">
       <div className="py-10 lg:py-14 bg-linear-to-b from-white to-transparent">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto">
           {/* Centered heading block */}
           <div
             ref={headerFade.ref}
@@ -106,7 +106,7 @@ export default function Testimonials() {
                 : "translate-y-6 opacity-0"
             }`}
           >
-            <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
+            <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
               Client Stories
             </p>
             <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-black">

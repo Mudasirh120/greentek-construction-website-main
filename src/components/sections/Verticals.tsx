@@ -49,7 +49,7 @@ export default function Verticals() {
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
             A Home That Works Harder, For Less.
           </h2>
-          <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed  text-center w-0/2 md:w-[85%] mx-auto font-normal">
+          <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed w-full text-center md:w-[85%] mx-auto font-normal">
             We believe you shouldn't need three different companies to power
             your property, fix your heating, and renovate your space. That's why
             Greentek brings solar, heat pumps, and energy storage together with

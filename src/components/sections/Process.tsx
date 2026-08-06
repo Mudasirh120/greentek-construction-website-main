@@ -38,7 +38,7 @@ export default function Process() {
               Four Steps. <br />
               Zero Surprises.
             </h2>
-            <p className="mt-4 text-lg md:text-xl text-white/80 leading-relaxed w-0/2 md:w-3/4 font-normal text-center">
+            <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed w-[80%] md:w-3/4 font-normal text-center">
               From the first call to the final handover, a clear, transparent
               process designed to deliver solar, home improvement, and
               renovation work with zero hassle.
