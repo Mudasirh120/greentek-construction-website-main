@@ -12,9 +12,9 @@
   "companyNo": "13013349",
   "location": "United Kingdom",
   "social": {
-    "facebook": "https://facebook.com/greentekenergy",
-    "instagram": "https://www.instagram.com/greentekenergy.uk?igsh=cHk4b3VnaTdtMTRo",
-    "linkedin": "https://linkedin.com/company/greentekenergy"
+    "facebook": "https://www.facebook.com/GreentekEnergyGroup/",
+    "instagram": "https://www.instagram.com/greentekenergy.uk",
+    "linkedin": "https://www.linkedin.com/company/greentekenergy-ltd/"
   },
   "navLinks": [
     {
@@ -279,9 +279,7 @@
       "description": "Rooftop solar system installed for a family home, cutting grid dependence and lowering monthly bills.",
       "before": "/images/projects/Solar/before.png",
       "after": "/images/projects/Solar/after.png",
-      "gallery": [
-        "/images/projects/Examples/Solar Panel Installation.png"
-      ],
+      "gallery": ["/images/projects/Examples/Solar Panel Installation.png"],
       "overview": [
         "This installation involved a full rooftop solar PV system for a family home, including panel positioning, inverter setup and connection into the property's existing electrical supply.",
         "The completed system reduces the property's reliance on grid electricity, helping to lower monthly energy bills and improve the home's overall energy efficiency."
@@ -357,12 +355,7 @@
       "image": "/images/areas/wolverhampton.jpg",
       "tagline": "Local crews, no subcontractors",
       "blurb": "Our in-house teams cover Wolverhampton and the surrounding Black Country regularly, delivering solar, heating, insulation and renovation projects without passing the job to subcontractors.",
-      "nearbyAreas": [
-        "Dudley",
-        "Telford",
-        "Stourbridge",
-        "Halesowen"
-      ]
+      "nearbyAreas": ["Dudley", "Telford", "Stourbridge", "Halesowen"]
     },
     {
       "slug": "coventry",
@@ -385,12 +378,7 @@
       "image": "/images/areas/dudley.jpg",
       "tagline": "Serving the Black Country",
       "blurb": "From Dudley through the wider Black Country, Greentek delivers renewable energy installations and construction projects with a clear, fixed-price quote and one accountable team.",
-      "nearbyAreas": [
-        "Stourbridge",
-        "Halesowen",
-        "Smethwick",
-        "Wolverhampton"
-      ]
+      "nearbyAreas": ["Stourbridge", "Halesowen", "Smethwick", "Wolverhampton"]
     },
     {
       "slug": "cardiff",
@@ -399,12 +387,7 @@
       "image": "/images/areas/cardiff.jpg",
       "tagline": "Renewable energy & renovation in Wales",
       "blurb": "Greentek brings the same in-house solar, heating, insulation and renovation service to Cardiff and the surrounding South Wales area, with local surveys and honest, fixed-price quotes.",
-      "nearbyAreas": [
-        "Newport",
-        "Bridgend",
-        "Neath",
-        "Merthyr Tydfil"
-      ]
+      "nearbyAreas": ["Newport", "Bridgend", "Neath", "Merthyr Tydfil"]
     },
     {
       "slug": "swansea",
@@ -413,12 +396,7 @@
       "image": "/images/areas/swansea.jpg",
       "tagline": "Renewable energy & renovation in Wales",
       "blurb": "In Swansea and the surrounding coastline, Greentek installs solar PV and heat pump systems and delivers insulation and renovation projects for homeowners looking to cut energy costs.",
-      "nearbyAreas": [
-        "Neath",
-        "Port Talbot",
-        "Bridgend",
-        "Wrexham"
-      ]
+      "nearbyAreas": ["Neath", "Port Talbot", "Bridgend", "Wrexham"]
     }
   ]
 }
