@@ -61,7 +61,7 @@ export default function Header() {
       `}</style>
 
       {/* Header Container */}
-      <header className="max-w-7xl px-8 sticky top-0 left-0 z-[60] flex justify-center bg-black/10 backdrop-blur-3xl border-b border-[#c5eb02]">
+      <header className="w-full px-8 sticky top-0 left-0 z-[60] flex justify-center bg-black/10 backdrop-blur-3xl border-b border-[#c5eb02]">
         <div className="flex w-full items-center justify-between px-4 py-3 bg-transparent">
           {/* Logo */}
           <Link href="/" className="flex items-center z-[70]">

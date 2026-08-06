@@ -41,31 +41,31 @@ const services: ServiceItem[] = [
     id: "solar",
     title: "Solar PV & Battery Storage",
     desc: "We design and install solar and battery systems tailored for homes, helping homeowners generate their own power and cut electricity bills from day one..",
-    image: "/images/services-glimpse/house.avif",
+    image: "/images/projects/Examples/Solar Panel Installation.png",
   },
   {
     id: "heating",
     title: "Heating & Boiler Upgrades",
     desc: "We install and upgrade heat pumps and boiler systems for homes, helping homeowners move to efficient, low-carbon heating certified by Gas Safe engineers.",
-    image: "/images/services-glimpse/supermarket.jpg",
+    image: "/images/projects/heating-system.jpg",
   },
   {
     id: "insulation",
     title: "Insulation",
     desc: "We install loft and external wall insulation tailored for homes, helping homeowners stop losing heat and cut what they spend keeping the house warm.",
-    image: "/images/services-glimpse/ev.jpg",
+    image: "/images/projects/External Wall Insulation/after.jpg",
   },
   {
     id: "property",
     title: "Property Refurbishment & Extensions",
     desc: "We deliver refurbishments and extensions tailored for homes, helping homeowners add real space and upgrade their property to a professional standard.",
-    image: "/images/services-glimpse/car.png",
+    image: "/images/projects/RIR/Mid RiR.jpeg",
   },
   {
     id: "commerical",
     title: "Commercial Planned Maintenance",
     desc: "We deliver refits and maintenance contracts tailored for businesses, helping commercial clients upgrade their premises and keep them running without disrepair.",
-    image: "/images/services-glimpse/supermarket.jpg",
+    image: "/images/projects/Shop Chimney/Post shop.jpeg",
   },
 ];
 
@@ -152,7 +152,7 @@ export default function ServicesGlimpse() {
               : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase  mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
             Our Services
           </p>
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">

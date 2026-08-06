@@ -209,14 +209,14 @@ export default function Projects() {
               : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit mx-auto">
             Our Work
           </p>
           <h2 className="text-[1.625rem] md:text-[2.5rem] font-bold leading-[1.2] tracking-tight text-white">
             See the Difference.
           </h2>
           <p className="mt-4 text-md md:text-xl text-white/80 leading-relaxed text-center w-[80%] md:w-[85%] mx-auto font-normal">
-            Drag the slider on each project to see the before and after — solar,
+            Drag the slider on each project to see the before and after, solar,
             home improvement, and renovation work, side by side.
           </p>
         </div>
@@ -230,6 +230,15 @@ export default function Projects() {
             delay={i * 100}
           />
         ))}
+      </div>
+      <div className="mt-16 flex justify-center items-center">
+        <a
+          href="/projects"
+          className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
+        >
+          View All Projects{" "}
+          <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
+        </a>
       </div>
     </section>
   );

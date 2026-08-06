@@ -494,7 +494,7 @@ export default function CtaSection({
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="w-full py-4 rounded-xl bg-[#c5eb02] text-black font-black text-xs uppercase tracking-[0.3em] hover:bg-[#c5eb02] transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                className="w-full py-4 rounded-xl bg-[#c5eb02] text-black font-black text-md hover:bg-[#c5eb02] transition-all duration-500 shadow-xl shadow-zinc-900/10 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
                 {status === "submitting" ? "Sending..." : "Send My Request"}
               </button>

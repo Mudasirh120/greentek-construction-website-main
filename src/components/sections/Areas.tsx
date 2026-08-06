@@ -1,5 +1,5 @@
 "use client";
-
+import { ArrowRight } from "lucide-react";
 // Placeholder data — replace image paths with real project photos,
 // and confirm/replace the placeholder stats below with real figures
 // before shipping. Anything marked "XX" is a placeholder, not a real number.
@@ -11,31 +11,37 @@ const majorAreas = [
     note: "Same-week surveys across the wider Birmingham metro area.",
     image: "/images/areas/solihull.jpg",
     size: "large" as const,
+    path: "/locations/solihull-birmingham",
   },
   {
     name: "Wolverhampton",
     image: "/images/areas/wolverhampton.jpg",
     size: "small" as const,
+    path: "/locations/wolverhampton",
   },
   {
     name: "Cardiff",
     image: "/images/areas/cardiff.jpg",
     size: "small" as const,
+    path: "/locations/cardiff",
   },
   {
     name: "Coventry",
     image: "/images/areas/coventry.jpg",
     size: "small" as const,
+    path: "/locations/coventry",
   },
   {
     name: "Swansea",
     image: "/images/areas/swansea.jpg",
     size: "small" as const,
+    path: "/locations/swansea",
   },
   {
     name: "Dudley",
     image: "/images/areas/dudley.jpg",
     size: "small" as const,
+    path: "/locations/dudley",
   },
 ];
 
@@ -74,8 +80,8 @@ export default function Areas() {
             <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit text-center mx-auto">
               Service Areas
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-black uppercase leading-tight tracking-tight text-white text-center">
-              Crews Local to Your Area.
+            <h2 className="text-3xl sm:text-4xl md:text-[2.5rem] font-bold leading-tight tracking-tight text-white text-center">
+              Local to Your Area.
             </h2>
             <p className="text-white/85 text-sm sm:text-base mt-3 text-center">
               Greentek is in-house, not a subcontracted franchise. Our team
@@ -87,7 +93,10 @@ export default function Areas() {
         {/* Mosaic grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Large tile — home base */}
-          <div className="lg:row-span-2 lg:col-span-2 relative rounded-xl overflow-hidden min-h-[280px] lg:min-h-0">
+          <div
+            className="lg:row-span-2 lg:col-span-2 relative rounded-md overflow-hidden min-h-[280px] lg:min-h-0"
+            onClick={() => (window.location.href = largeArea.path)}
+          >
             <img
               src={largeArea.image}
               alt={largeArea.name}
@@ -95,7 +104,7 @@ export default function Areas() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="relative z-10 h-full flex flex-col justify-end p-6">
-              <h3 className="text-white text-2xl sm:text-3xl font-black uppercase tracking-tight">
+              <h3 className="text-white text-2xl sm:text-3xl font-semibold  tracking-tight">
                 {largeArea.name}
               </h3>
               {largeArea.note && (
@@ -110,7 +119,7 @@ export default function Areas() {
           {smallAreas.map((area) => (
             <div
               key={area.name}
-              className="relative rounded-xl overflow-hidden min-h-[160px]"
+              className="relative rounded-md overflow-hidden min-h-[160px]"
             >
               <img
                 src={area.image}
@@ -120,7 +129,7 @@ export default function Areas() {
 
               <div className="absolute inset-0 bg-gradient-to-t from- 20% from-black/75 via-black/10 to-transparent" />
               <div className="relative z-10 h-full flex flex-col justify-end p-4">
-                <h4 className="text-white text-lg font-black uppercase tracking-tight">
+                <h4 className="text-white text-lg font-semibold tracking-tight">
                   {area.name}
                 </h4>
                 <p className="text-white/85 text-xs font-semibold mt-0.5">
@@ -132,7 +141,7 @@ export default function Areas() {
         </div>
 
         {/* Marquee ticker */}
-        <div className="mt-4 relative flex items-center bg-zinc-900 rounded-xl overflow-hidden h-16">
+        <div className="mt-4 relative flex items-center bg-zinc-900 rounded-md overflow-hidden h-16">
           <div className="flex-shrink-0 z-10 h-full flex flex-col justify-center px-6 bg-zinc-900">
             <p className="text-[9px] font-black uppercase tracking-[0.25em] text-zinc-400">
               Plus
@@ -155,6 +164,15 @@ export default function Areas() {
               ))}
             </div>
           </div>
+        </div>
+        <div className="mt-16 flex justify-center items-center">
+          <a
+            href="/services"
+            className="w-fit rounded px-4 py-3 text-sm md:text-[18px] font-semibold text-black backdrop-blur-sm transition active:scale-95 bg-[#c5eb02]"
+          >
+            View All Areas{" "}
+            <ArrowRight className="inline ml-2 bg-black rounded px-1 py-1 text-white" />
+          </a>
         </div>
       </div>
 

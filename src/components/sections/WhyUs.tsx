@@ -79,12 +79,12 @@ function StatCard({ stat, delay }: { stat: (typeof stats)[0]; delay: number }) {
   return (
     <div
       ref={fade.ref}
-      className={`group relative bg-zinc-50 rounded-3xl p-5 md:p-8 border border-zinc-100 transition-all duration-700 hover:bg-white hover:border-green-500/20 hover:shadow-2xl hover:shadow-green-900/5 hover:-translate-y-1 ${
+      className={`group relative bg-zinc-50 rounded-3xl p-5 md:p-8 border border-zinc-100 transition-all duration-700 hover:bg-white hover:border-[#c5eb02]/20 hover:shadow-2xl hover:shadow-[#c5eb02]/5 hover:-translate-y-1 ${
         fade.visible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       }`}
     >
       <div className="relative z-10">
-        <span className="text-3xl md:text-4xl font-black text-green-700 leading-none tracking-tighter block mb-3 group-hover:scale-105 transition-transform duration-500 origin-left">
+        <span className="text-3xl md:text-4xl font-black text-[#c5eb02] leading-none tracking-tighter block mb-3 group-hover:scale-105 transition-transform duration-500 origin-left">
           {target !== null ? (
             <CountUp target={target} suffix={suffix} visible={fade.visible} />
           ) : (

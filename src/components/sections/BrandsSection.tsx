@@ -59,7 +59,7 @@ export default function BrandsSection() {
               : "translate-y-6 opacity-0"
           }`}
         >
-          <p className="text-[10px] md:text-[16px] font-semibold uppercase tracking-[0.3em] mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
+          <p className="text-[10px] md:text-[16px] font-semibold uppercase mb-6 bg-[#28282C] text-[#c5eb02] rounded-2xl px-3 py-1 w-fit mx-auto">
             Our Network
           </p>
           <h2
