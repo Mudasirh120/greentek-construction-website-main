@@ -66,9 +66,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             >
               ← All Projects
             </Link>
-            <span className="inline-block bg-[#c5eb02] text-black text-xs font-bold px-4 py-2 rounded-full mb-6">
-              {project.category}
-            </span>
+
             <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-6">
               {project.title}
             </h1>
@@ -94,7 +92,9 @@ export default async function ProjectDetailPage({ params }: Props) {
         </section>
 
         {/* About This Project */}
-        {(project.overview?.length || project.gallery?.length || relatedService) && (
+        {(project.overview?.length ||
+          project.gallery?.length ||
+          relatedService) && (
           <section className="pb-12 lg:pb-24">
             <div className="mx-auto max-w-4xl px-6">
               {project.overview && project.overview.length > 0 && (

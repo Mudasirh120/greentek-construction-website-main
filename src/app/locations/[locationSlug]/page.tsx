@@ -66,22 +66,19 @@ export default async function LocationDetailPage({ params }: Props) {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-black/65" />
-            <div className="relative z-10 h-full flex flex-col justify-end px-6 py-12 max-w-4xl mx-auto">
+            <div className="absolute inset-0 bg-black/70" />
+            <div className="relative z-10 h-full flex flex-col items-center justify-end px-6 py-12 max-w-4xl mx-auto">
               <Link
                 href="/locations"
                 className="inline-flex items-center gap-2 text-[#c5eb02] font-bold text-sm mb-6 hover:text-[#c5eb02]/80 w-fit"
               >
                 ← All Areas
               </Link>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-4 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
-                {location.region}
-              </p>
-              <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-4">
+              <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mb-4 mx-auto text-center">
                 Renewable Energy & Construction in{" "}
                 <span className="text-[#c5eb02]">{location.name}</span>
               </h1>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium max-w-2xl mb-8">
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed font-medium max-w-2xl mb-8 text-center">
                 {location.blurb}
               </p>
 
@@ -196,9 +193,7 @@ export default async function LocationDetailPage({ params }: Props) {
                   <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[#c5eb02] transition-colors">
                     {other.name}
                   </h4>
-                  <p className="text-white/70 text-sm mb-4">
-                    {other.tagline}
-                  </p>
+                  <p className="text-white/70 text-sm mb-4">{other.tagline}</p>
                   <span className="text-[#c5eb02] font-bold text-sm">
                     View Area →
                   </span>

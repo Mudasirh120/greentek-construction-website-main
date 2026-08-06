@@ -39,7 +39,7 @@ export default function ContactPageClient() {
       <Header />
       {/* Centered Hero Section */}
       <section className="relative  bg-[url('/images/footer/footer-bg.webp')] bg-cover overflow-hidden">
-        <div className="bg-black/60 pt-30 py-20">
+        <div className="bg-black/70 pt-30 py-20">
           <div
             ref={headerFade.ref}
             className={`relative mx-auto max-w-7xl px-6 text-center transition-all duration-1000 ease-out ${

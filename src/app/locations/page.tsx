@@ -20,11 +20,11 @@ export default function LocationsPage() {
       <Header />
       <main className="flex-1">
         <section className="relative bg-[url('/images/footer/footer-bg.webp')] bg-cover overflow-hidden">
-          <div className="bg-black/60 pt-30 py-20">
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mx-auto text-center">
+          <div className="bg-black/70 pt-30 py-20">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mx-auto text-center">
               Areas We <span className="text-[#c5eb02]">Cover</span>
             </h1>
-            <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium text-center">
+            <p className="mt-6 text-md md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-medium text-center w-[85%]">
               Greentek is in-house, not a subcontracted franchise. Our teams
               live and work across the West Midlands and Wales, delivering
               solar, heating, insulation and renovation projects locally.
@@ -48,15 +48,9 @@ export default function LocationsPage() {
                     className="object-cover -z-10 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent -z-10" />
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-3 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
-                    {location.region}
-                  </p>
-                  <h3 className="text-2xl font-black text-white mb-2 group-hover:text-[#c5eb02] transition-colors">
+                  <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-[#c5eb02] transition-colors">
                     {location.name}
                   </h3>
-                  <p className="text-white/80 text-sm font-medium mb-3">
-                    {location.tagline}
-                  </p>
                   <span className="text-[#c5eb02] font-bold text-sm">
                     View Services in {location.name} →
                   </span>

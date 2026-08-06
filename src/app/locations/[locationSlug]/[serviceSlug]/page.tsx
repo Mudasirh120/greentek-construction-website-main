@@ -77,7 +77,7 @@ export default async function LocationServicePage({ params }: Props) {
       <main className="flex-1">
         {/* Hero */}
         <section className="py-12 md:py-20 border-b border-[#c5eb02]">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-4xl px-6 flex flex-col items-center justify-center text-center">
             <div className="flex flex-wrap items-center gap-2 text-sm mb-6">
               <Link
                 href="/locations"
@@ -96,10 +96,7 @@ export default async function LocationServicePage({ params }: Props) {
               <span className="text-white/60">{service.shortName}</span>
             </div>
 
-            <p className="text-[10px] font-semibold uppercase tracking-[0.3em] mb-4 bg-[#28282C] text-[#c5eb02] rounded-xl px-3 py-1 w-fit">
-              {location.region}
-            </p>
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mb-6">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mb-6">
               {service.shortName} in{" "}
               <span className="text-[#c5eb02]">{location.name}</span>
             </h1>

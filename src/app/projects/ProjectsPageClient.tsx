@@ -1,5 +1,4 @@
 "use client";
-
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
@@ -91,11 +90,11 @@ export default function ProjectsPageClient() {
       <main className="flex-1 ">
         {/* Projects Header - Centered */}
         <section className="relative bg-[url('/images/footer/footer-bg.webp')] bg-cover overflow-hidden">
-          <div className="bg-black/60 pt-30 py-20">
-            <h1 className="text-[2rem] md:text-[3.5rem] font-extrabold leading-[1.15] text-white mx-auto text-center">
+          <div className="bg-black/70 pt-30 py-20">
+            <h1 className="text-[2rem] md:text-[3.5rem] font-bold leading-[1.15] text-white mx-auto text-center">
               Our <span className="text-[#C5EB02]">Project Gallery</span>
             </h1>
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="mt-6 text-md md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed font-medium text-center w-[85%]">
               Explore our track record of excellence across the UK, featuring
               high-impact renewable energy installations and premium
               construction projects.
